@@ -2,8 +2,6 @@
 
 This add‑on wraps the official **linuxserver/obsidian** container, giving you a full desktop version of Obsidian accessible from the Home Assistant sidebar via Ingress.
 
-It follows the "pure wrapper" philosophy – no Dockerfile here – so updates are instant and always track upstream.
-
 ---
 
 ### Configuration

@@ -80,11 +80,10 @@ function init_dbus() {
         echo "dbus already running"
         return 0
     fi
-
     echo "Startup dbus"
-
     rm -fr /var/run/dbus
     mkdir -p /var/run/dbus
+
     dbus-daemon --system --print-address
 }
 

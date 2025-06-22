@@ -27,6 +27,7 @@ Any change that breaks a pillar must raise an issue first.
 
 ### 2.1 `.codex/tasks.yml`
 * Treat each `id:` as a single, atomic deliverable.
+
 * Update the `status:` field (`todo` → `in-progress` → `done`) in the same PR
   that implements the task.
 
@@ -92,6 +93,7 @@ Record pass/fail and resource metrics in `/TESTS.md`.
 
 ## 7 ️⃣  Sensitive actions
 
+
 | Action | Allowed by | Procedure |
 |--------|-----------|-----------|
 | Bumping `version` & image tag | `ADDON-013` release workflow only | Never bump manually outside the workflow. |
@@ -116,4 +118,3 @@ Record pass/fail and resource metrics in `/TESTS.md`.
 3. Open an issue tagged **question** before coding.
 
 Happy hacking!
-*— The maintainers*
