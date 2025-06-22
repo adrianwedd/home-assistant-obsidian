@@ -1,0 +1,10 @@
+configuration:
+  puid:
+    name: "User ID (PUID)"
+    description: "The user ID for file permissions. See addon documentation for details."
+  pgid:
+    name: "Group ID (PGID)"
+    description: "The group ID for file permissions. See addon documentation for details."
+  tz:
+    name: "Timezone"
+    description: "Your local timezone (e.g., 'America/New_York')."
