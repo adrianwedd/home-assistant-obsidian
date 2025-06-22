@@ -42,18 +42,18 @@
 - id: ADDON-008
   title: Commit branding assets and reference in config
   kind: docs
-  status: todo
+  status: done
   requires: [ADDON-003]
   subtasks:
     - id: ADDON-008a
       title: Design icon.png 128×128 (transparent PNG)
-      status: todo
+      status: done
     - id: ADDON-008b
       title: Design logo.png ≈250×100
-      status: todo
+      status: done
     - id: ADDON-008c
       title: Add files to obsidian/ and update config.yaml
-      status: todo
+      status: done
 
 - id: ADDON-009
   title: Compose README.md (root) and DOCS.md (add-on panel)
@@ -76,17 +76,15 @@
 - id: ADDON-012
   title: Functional smoke-test matrix
   kind: test
-  status: blocked
+  status: in-progress
   notes: |
-    Attempted in dev container but tests could not start:
-      - Docker daemon unavailable (permission denied)
-      - `ha` CLI and `pre-commit` missing
-    Resolve by using the official dev-container or enabling Docker access.
+    Basic smoke-test script added. Docker socket and tools now in dev-container.
+    Still need to run tests on physical devices.
   requires: [ADDON-004, ADDON-005, ADDON-010]
   subtasks:
     - id: ADDON-012a
       title: Dev-container (amd64) test
-      status: blocked
+      status: in-progress
     - id: ADDON-012b
       title: Raspberry Pi 4 (aarch64) test
       status: blocked
