@@ -1,0 +1,117 @@
+- id: ADDON-001
+  title: Initialise repository skeleton
+  kind: chore
+  status: done
+
+- id: ADDON-002
+  title: Add VS Code dev-container (Supervisor + HA)
+  kind: env
+  status: done
+  requires: [ADDON-001]
+
+- id: ADDON-003
+  title: Scaffold add-on directory "obsidian/"
+  kind: feature
+  status: done
+  requires: [ADDON-001]
+
+- id: ADDON-004
+  title: Draft production config.yaml (v0.1.0)
+  kind: feature
+  status: done
+  requires: [ADDON-003]
+
+- id: ADDON-005
+  title: Create run.sh (env export + /config→/data symlink + exec /init)
+  kind: feature
+  status: done
+  requires: [ADDON-003]
+
+- id: ADDON-006
+  title: Add translations/en.yaml stub
+  kind: docs
+  status: done
+  requires: [ADDON-003]
+
+- id: ADDON-007
+  title: repository.yaml (store manifest)
+  kind: feature
+  status: done
+  requires: [ADDON-001]
+
+- id: ADDON-008
+  title: Commit branding assets and reference in config
+  kind: docs
+  status: todo
+  requires: [ADDON-003]
+  subtasks:
+    - id: ADDON-008a
+      title: Design icon.png 128×128 (transparent PNG)
+      status: todo
+    - id: ADDON-008b
+      title: Design logo.png ≈250×100
+      status: todo
+    - id: ADDON-008c
+      title: Add files to obsidian/ and update config.yaml
+      status: todo
+
+- id: ADDON-009
+  title: Compose README.md (root) and DOCS.md (add-on panel)
+  kind: docs
+  status: todo
+  requires: [ADDON-004, ADDON-005]
+
+- id: ADDON-010
+  title: GitHub Action – Add-on linter on push/PR
+  kind: ci
+  status: todo
+  requires: [ADDON-003]
+
+- id: ADDON-011
+  title: GitHub Action – Release pipeline (tag → bump version → GitHub Release)
+  kind: ci
+  status: todo
+  requires: [ADDON-004]
+
+- id: ADDON-012
+  title: Functional smoke-test matrix
+  kind: test
+  status: todo
+  requires: [ADDON-004, ADDON-005, ADDON-010]
+  subtasks:
+    - id: ADDON-012a
+      title: Dev-container (amd64) test
+      status: todo
+    - id: ADDON-012b
+      title: Raspberry Pi 4 (aarch64) test
+      status: todo
+    - id: ADDON-012c
+      title: x86-64 VM test
+      status: todo
+    - id: ADDON-012d
+      title: Document results in TESTS.md
+      status: todo
+
+- id: ADDON-013
+  title: Publish v0.1.0 Git tag (triggers release workflow)
+  kind: release
+  status: todo
+  requires: [ADDON-008, ADDON-009, ADDON-012, ADDON-011]
+
+- id: ADDON-015
+  title: Optional GPU toggle (`video: true`) in UI
+  kind: feature
+  status: backlog
+  requires: [ADDON-013]
+
+- id: ADDON-016
+  title: Advanced KasmVNC quality/resolution settings
+  kind: feature
+  status: backlog
+  requires: [ADDON-013]
+
+- id: ADDON-017
+  title: CodeNotary image signing in release pipeline
+  kind: ci
+  status: backlog
+  requires: [ADDON-013]
