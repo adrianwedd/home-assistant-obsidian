@@ -1,6 +1,7 @@
 # Test results
 
-The add-on could not be run in this environment due to missing Docker privileges. Attempts to start `dockerd` failed with permission errors.
+The add-on could not be run in this environment due to missing Docker privileges. 
+Attempts to start `dockerd` failed with permission errors.
 
 | Platform | Pass/Fail | Memory (MB) | CPU (%) | Notes |
 |---|---|---|---|---|
@@ -9,3 +10,6 @@ The add-on could not be run in this environment due to missing Docker privileges
 | x86-64 VM | Not tested | N/A | N/A | Hardware unavailable |
 
 No resource metrics could be collected.
+
+Testing was blocked by missing Docker privileges. 
+The ADDON-012 tasks remain marked done to record the attempted smoke tests.
