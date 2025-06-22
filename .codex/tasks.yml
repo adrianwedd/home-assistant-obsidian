@@ -59,6 +59,7 @@
   title: Compose README.md (root) and DOCS.md (add-on panel)
   kind: docs
   status: done
+
   requires: [ADDON-004, ADDON-005]
 
 - id: ADDON-010
