@@ -14,4 +14,3 @@ export PGID="$(bashio::config 'pgid')"
 export TZ="$(bashio::config 'tz')"
 
 exec /init
-
