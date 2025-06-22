@@ -16,7 +16,7 @@
   requires: [ADDON-001]
 
 - id: ADDON-004
-  title: Draft production config.yaml (v1.0.0)
+  title: Draft production config.yaml (v0.1.0)
   kind: feature
   status: done
   requires: [ADDON-003]
@@ -59,7 +59,6 @@
   title: Compose README.md (root) and DOCS.md (add-on panel)
   kind: docs
   status: done
-
   requires: [ADDON-004, ADDON-005]
 
 - id: ADDON-010
@@ -94,7 +93,7 @@
       status: todo
 
 - id: ADDON-013
-  title: Publish v1.0.0 Git tag (triggers release workflow)
+  title: Publish v0.1.0 Git tag (triggers release workflow)
   kind: release
   status: todo
   requires: [ADDON-008, ADDON-009, ADDON-012, ADDON-011]

@@ -47,7 +47,7 @@ You can restore a snapshot on a new HA instance and your vault re‑appears inta
 ### Resource Use
 
 * Typical idle RAM ≈ 350‑450 MB, peaks ≈ 600 MB during heavy vault sync  
-* CPU load is modest; rendering is software‑only in v1.0  
+* CPU load is modest; rendering is software‑only in v0.1
 * The add‑on reserves **512 MB** (`memory:` hint) – low‑RAM devices may show a Supervisor warning  
 * Watchdog monitors `http://[HOST]:3000/` to keep the UI responsive
 
@@ -67,7 +67,7 @@ You can restore a snapshot on a new HA instance and your vault re‑appears inta
 
 | Version | Date | Notes |
 |---------|------|-------|
-| `1.0.0` | 2025‑06‑22 | Initial public release – pure wrapper, Ingress, multi‑arch. |
+| `0.1.0` | 2025‑06‑22 | Initial public release – pure wrapper, Ingress, multi‑arch. |
 
 ---
 
