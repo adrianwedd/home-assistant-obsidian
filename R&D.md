@@ -89,7 +89,7 @@ This phase focuses on the meticulous construction of the addon's central manifes
 The first step is to give the addon a clear and professional identity.\[5\]
 
 * name: "Obsidian"  
-* version: "0.1.0"
+* version: "1.0.0"  
 * slug: "obsidian"  
 * description: "A secure, self-hosted digital brain with Home Assistant integration."  
 * url: A link to the addon's GitHub repository.  
@@ -108,7 +108,7 @@ The implementation will be: image: "lscr.io/linuxserver/obsidian:{version}".
 
 ### **2.3. User Configuration: options and schema**
 
-The options and schema keys expose validated options to the user.\[5\] For v0.1, the UI is kept minimal by only exposing essential options.
+The options and schema keys expose validated options to the user.\[5\] For v1.0, the UI is kept minimal by only exposing essential options.
 
 * **User/Group and Timezone:**  
   options:  
@@ -206,7 +206,7 @@ This plan outlines a professional methodology for creating a stable, secure, and
 
 ### **Future Development Backlog**
 
-* **GPU Support (Backlog):** Investigate methods to allow users to optionally enable GPU hardware acceleration. This is not in scope for v0.1, as a user-configurable toggle requires a more complex implementation than is suitable for a pure-wrapper addon.
+* **GPU Support (Backlog):** Investigate methods to allow users to optionally enable GPU hardware acceleration. This is not in scope for v1.0, as a user-configurable toggle requires a more complex implementation than is suitable for a pure-wrapper addon.  
 * **Code Signing:** For enhanced security and to meet the requirements of official community repositories, pre-add the codenotary key to config.yaml (e.g., codenotary: "\[email protected\]").\[5\]  
 * **Automated Release Notes:** Configure Renovate to include upstream changelog snippets in its pull requests for instant release notes.
 

@@ -1,7 +1,5 @@
-# Obsidian – Home Assistant Community Add-on
+# Obsidian – Home Assistant Community Add-on  
 *A private, full-desktop Obsidian vault streamed via KasmVNC and embedded directly in your Home Assistant UI.*
-
-This repository wraps the `lscr.io/linuxserver/obsidian` container without a Dockerfile, keeping the add-on lightweight and always up to date.
 
 [![Lint](https://github.com/adrianwedd/home-assistant-obsidian/actions/workflows/lint.yml/badge.svg)](https://github.com/adrianwedd/home-assistant-obsidian/actions/workflows/lint.yml)
 [![Release](https://img.shields.io/github/v/release/adrianwedd/home-assistant-obsidian?sort=semver)](https://github.com/adrianwedd/home-assistant-obsidian/releases)

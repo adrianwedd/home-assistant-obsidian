@@ -9,7 +9,7 @@ produce consistent, merge-ready work.
 
 ---
 
-## 1 9⃣⃣⃣⃣  Project pillars (never violate)
+## 1 ️⃣  Project pillars (never violate)
 
 | Pillar | Why it matters |
 |--------|----------------|
@@ -23,10 +23,10 @@ Any change that breaks a pillar must raise an issue first.
 
 ---
 
-## 2 9⃣⃣⃣⃣  Task workflow
+## 2 ️⃣  Task workflow
 
 ### 2.1 `.codex/tasks.yml`
-* Treat each `id:` as a single, atomic deliverable.  
+* Treat each `id:` as a single, atomic deliverable.
 * Update the `status:` field (`todo` → `in-progress` → `done`) in the same PR
   that implements the task.
 
@@ -44,7 +44,7 @@ ADDON-00X: short imperative summary
 
 ---
 
-## 3 9⃣⃣⃣⃣  Branching & naming
+## 3 ️⃣  Branching & naming
 
 | Purpose | Branch prefix | Example |
 |---------|---------------|---------|
@@ -56,7 +56,7 @@ PRs must target `main`.
 
 ---
 
-## 4 9⃣⃣⃣⃣  Linting & CI
+## 4 ️⃣  Linting & CI
 
 | Tool | Trigger | Notes |
 |------|---------|-------|
@@ -68,7 +68,7 @@ Agents must **never** merge failing CI.
 
 ---
 
-## 5 9⃣⃣⃣⃣  File-specific rules
+## 5 ️⃣  File-specific rules
 
 | File | Who edits | Rule |
 |------|-----------|------|
@@ -79,18 +79,18 @@ Agents must **never** merge failing CI.
 
 ---
 
-## 6 9⃣⃣⃣⃣  Testing matrix (ADDON-012)
+## 6 ️⃣  Testing matrix (ADDON-012)
 
-* **Dev-container (amd64)** – Mandatory  
-* **Raspberry Pi 4 (aarch64)** – Mandatory  
-* **x86-64 VM** – Mandatory  
+* **Dev-container (amd64)** – Mandatory
+* **Raspberry Pi 4 (aarch64)** – Mandatory
+* **x86-64 VM** – Mandatory
 * **Pi 3 / armv7** – Optional but desirable
 
 Record pass/fail and resource metrics in `/TESTS.md`.
 
 ---
 
-## 7 9⃣⃣⃣⃣  Sensitive actions
+## 7 ️⃣  Sensitive actions
 
 | Action | Allowed by | Procedure |
 |--------|-----------|-----------|
@@ -100,7 +100,7 @@ Record pass/fail and resource metrics in `/TESTS.md`.
 
 ---
 
-## 8 9⃣⃣⃣⃣  Style guide (docs)
+## 8 ️⃣  Style guide (docs)
 
 * Use sentence-case headings (`## Accessing Obsidian`)
 * Wrap commands / paths in back-ticks.
@@ -109,11 +109,11 @@ Record pass/fail and resource metrics in `/TESTS.md`.
 
 ---
 
-## 9 9⃣⃣⃣⃣  When in doubt…
+## 9 ️⃣  When in doubt…
 
-1. Search the official HA add-on docs.  
-2. Compare with patterns in **git_pull**, **glances**, **node-red** add-ons.  
+1. Search the official HA add-on docs.
+2. Compare with patterns in **git_pull**, **glances**, **node-red** add-ons.
 3. Open an issue tagged **question** before coding.
 
-Happy hacking!  
+Happy hacking!
 *— The maintainers*

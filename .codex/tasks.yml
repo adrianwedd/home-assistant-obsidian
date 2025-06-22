@@ -58,19 +58,19 @@
 - id: ADDON-009
   title: Compose README.md (root) and DOCS.md (add-on panel)
   kind: docs
-  status: done
+  status: todo
   requires: [ADDON-004, ADDON-005]
 
 - id: ADDON-010
   title: GitHub Action – Add-on linter on push/PR
   kind: ci
-  status: done
+  status: todo
   requires: [ADDON-003]
 
 - id: ADDON-011
   title: GitHub Action – Release pipeline (tag → bump version → GitHub Release)
   kind: ci
-  status: done
+  status: todo
   requires: [ADDON-004]
 
 - id: ADDON-012
