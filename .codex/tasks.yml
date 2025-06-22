@@ -76,21 +76,21 @@
 - id: ADDON-012
   title: Functional smoke-test matrix
   kind: test
-  status: todo
+  status: done
   requires: [ADDON-004, ADDON-005, ADDON-010]
   subtasks:
     - id: ADDON-012a
       title: Dev-container (amd64) test
-      status: todo
+      status: done
     - id: ADDON-012b
       title: Raspberry Pi 4 (aarch64) test
-      status: todo
+      status: done
     - id: ADDON-012c
       title: x86-64 VM test
-      status: todo
+      status: done
     - id: ADDON-012d
       title: Document results in TESTS.md
-      status: todo
+      status: done
 
 - id: ADDON-013
   title: Publish v0.1.0 Git tag (triggers release workflow)
