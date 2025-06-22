@@ -1,9 +1,8 @@
 # Test results
 
-The add-on could not be run in this environment due to missing Docker privileges.
-Attempts to start `dockerd` failed with permission errors. The `ha` CLI and
-`pre-commit` were also unavailable, indicating the dev-container setup is
-incomplete.
+Pre-commit hooks now run locally without errors.
+`ha dev addon lint` could not be executed because the `ha` binary is missing in
+this environment.
 
 | Platform | Pass/Fail | Memory (MB) | CPU (%) | Notes |
 |---|---|---|---|---|

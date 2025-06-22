@@ -1,6 +1,8 @@
 name: Obsidian
 version: "0.1.0"
 slug: obsidian
+icon: icon.png
+logo: logo.png
 description: A secure, self-hosted digital brain with Home Assistant integration.
 url: https://github.com/adrianwedd/home-assistant-obsidian
 arch:
