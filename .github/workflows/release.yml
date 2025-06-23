@@ -13,11 +13,13 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: '3.x'
-      - name: Update version in config.yaml
+      - name: Update version and image tag
         run: |
           sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/local/bin/yq
           sudo chmod +x /usr/local/bin/yq
-          yq -i ".version = \"${GITHUB_REF_NAME#v}\"" obsidian/config.yaml
+          VERSION="${GITHUB_REF_NAME#v}"
+          yq -i ".version = \"${VERSION}\"" obsidian/config.yaml
+          yq -i ".image = \"lscr.io/linuxserver/obsidian:${VERSION}\"" obsidian/config.yaml
       - uses: softprops/action-gh-release@v1
         with:
           files: obsidian/config.yaml

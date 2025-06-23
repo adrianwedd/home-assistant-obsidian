@@ -10,7 +10,7 @@ arch:
   - amd64
   - armv7
 init: false
-image: lscr.io/linuxserver/obsidian:latest
+image: lscr.io/linuxserver/obsidian:0.1.0
 tmpfs: true
 ingress: true
 ingress_port: 3000
