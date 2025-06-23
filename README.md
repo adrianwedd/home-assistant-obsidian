@@ -78,5 +78,7 @@ CI must pass and docs remain in sync for PRs to be merged.
 
 ## 📜 Licence
 
-MIT License © 2025 Your Name <your-email@example.com> – see [LICENSE](LICENSE)
+
+MIT © 2025 Adrian Wedd <adrian@adrianwedd.com>
+
 Upstream image © LinuxServer.io (GPL‑v3)
