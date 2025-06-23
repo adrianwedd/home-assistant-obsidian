@@ -118,3 +118,9 @@
   kind: ci
   status: backlog
   requires: [ADDON-013]
+
+- id: ADDON-018
+  title: Add .gitignore
+  kind: chore
+  status: done
+  requires: [ADDON-001]
