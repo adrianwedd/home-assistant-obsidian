@@ -124,3 +124,9 @@
   kind: chore
   status: done
   requires: [ADDON-001]
+
+- id: ADDON-019
+  title: Add markdownlint and shellcheck pre-commit hooks
+  kind: chore
+  status: done
+  requires: [ADDON-018]
