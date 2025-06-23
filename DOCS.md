@@ -22,16 +22,16 @@ After editing, **Save** then **Restart** the add‑on for changes to take effect
 
 ### Accessing Obsidian
 
-1. Start the add‑on, wait ≈ 30 s for first‑time initialisation.  
-2. Click **Open Web UI** or the 🧠 Obsidian sidebar entry.  
-3. In the VNC desktop choose **Create new vault** and point it to `/config/MyVault`.  
+1. Start the add‑on, wait ≈ 30 s for first‑time initialisation.
+2. Click **Open Web UI** or the 🧠 Obsidian sidebar entry.
+3. In the VNC desktop choose **Create new vault** and point it to `/config/MyVault`.
    `/config` inside the container maps to the add‑on’s persistent `/data` directory.
 
 ---
 
 ### Data & Backups
 
-* All vault data lives in `/data` – automatically included in HA snapshots.  
+* All vault data lives in `/data` – automatically included in HA snapshots.
 * Snapshots stay lean thanks to:
 
   ```yaml
@@ -46,9 +46,9 @@ You can restore a snapshot on a new HA instance and your vault re‑appears inta
 
 ### Resource Use
 
-* Typical idle RAM ≈ 350‑450 MB, peaks ≈ 600 MB during heavy vault sync  
+* Typical idle RAM ≈ 350‑450 MB, peaks ≈ 600 MB during heavy vault sync
 * CPU load is modest; rendering is software‑only in v0.1
-* The add‑on reserves **512 MB** (`memory:` hint) – low‑RAM devices may show a Supervisor warning  
+* The add‑on reserves **512 MB** (`memory:` hint) – low‑RAM devices may show a Supervisor warning
 * Watchdog monitors `http://[HOST]:3000/` to keep the UI responsive
 
 ---
@@ -72,3 +72,5 @@ You can restore a snapshot on a new HA instance and your vault re‑appears inta
 ---
 
 Questions or feedback? [Open an issue on GitHub](https://github.com/adrianwedd/home-assistant-obsidian/issues) or join the discussion in the [Home Assistant Community](https://community.home-assistant.io/).
+
+MIT License © 2025 Your Name <your-email@example.com> – see [LICENSE](https://github.com/adrianwedd/home-assistant-obsidian/blob/main/LICENSE)

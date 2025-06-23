@@ -24,14 +24,14 @@ This repository wraps the `lscr.io/linuxserver/obsidian` container without a Doc
 
 ## 🚀 Quick Start
 
-1. **Add repository**  
+1. **Add repository**
    *Settings → Add‑ons → Add‑on Store → ⋮ → Repositories →*
 
    ```text
    https://github.com/adrianwedd/home-assistant-obsidian
    ```
 
-2. **Install** the **Obsidian** add‑on.  
+2. **Install** the **Obsidian** add‑on.
 3. **Configure** (optional – defaults work on many systems):
 
    | Option | Default | Notes |
@@ -40,16 +40,16 @@ This repository wraps the `lscr.io/linuxserver/obsidian` container without a Doc
    | `pgid` | `1000`  | Numeric group ID. Run `id -g` on Linux. |
    | `tz`   | `UTC`   | Time‑zone string, e.g. `Europe/London`. |
 
-4. **Start** the add‑on → **Open Web UI** (or click the 🧠 Obsidian icon in the sidebar).  
+4. **Start** the add‑on → **Open Web UI** (or click the 🧠 Obsidian icon in the sidebar).
 5. **Create your vault** inside `/config/MyVault` (maps to the add‑on’s persistent storage).
 
 ---
 
 ## 🔒 Security & Resources
 
-* Runs **unprivileged**; no `full_access` or extra capabilities by default.  
-* GPU passthrough is **deferred** to a future release.  
-* Memory hint set to **512 MB** – HA will warn (but not block) on 1 GB devices.  
+* Runs **unprivileged**; no `full_access` or extra capabilities by default.
+* GPU passthrough is **deferred** to a future release.
+* Memory hint set to **512 MB** – HA will warn (but not block) on 1 GB devices.
 * Watchdog at `http://[HOST]:3000/` ensures automatic recovery if the VNC stack freezes.
 
 ---
@@ -63,20 +63,20 @@ code .
 # Reopen in Dev Container → HA boots on http://localhost:8123
 ```
 
-*Lint locally:* `ha dev addon lint`  
+*Lint locally:* `ha dev addon lint`
 CI must pass and docs remain in sync for PRs to be merged.
 
 ---
 
 ## 🗺 Roadmap
 
-* Optional GPU toggle (`video: true`) behind a UI switch  
-* Advanced KasmVNC settings (resolution, quality)  
+* Optional GPU toggle (`video: true`) behind a UI switch
+* Advanced KasmVNC settings (resolution, quality)
 * CodeNotary signing prior to submission to the Community Add‑ons repo
 
 ---
 
 ## 📜 Licence
 
-MIT © 2025 <Your Name>  
+MIT License © 2025 Your Name <your-email@example.com> – see [LICENSE](LICENSE)
 Upstream image © LinuxServer.io (GPL‑v3)
