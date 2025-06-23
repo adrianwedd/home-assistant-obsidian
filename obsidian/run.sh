@@ -1,4 +1,5 @@
 #!/usr/bin/with-contenv bashio
+# shellcheck shell=bash disable=SC2155
 set -e
 
 # Symlink /data to /config to match linuxserver.io's expected data path.

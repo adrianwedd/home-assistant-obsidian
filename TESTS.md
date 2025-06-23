@@ -1,6 +1,7 @@
 # Test results
 
 Pre-commit hooks now run locally without errors.
+The hook suite now includes `markdownlint` and `shellcheck`.
 `ha dev addon lint` could not be executed because the `ha` binary is missing in
 this environment.
 

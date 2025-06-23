@@ -1,4 +1,5 @@
 #!/bin/bash
+# shellcheck shell=bash disable=SC2155
 set -eE
 
 SUPERVISOR_VERSON="$(curl -s https://version.home-assistant.io/dev.json | jq -e -r '.supervisor')"
