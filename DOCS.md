@@ -73,4 +73,4 @@ You can restore a snapshot on a new HA instance and your vault re‑appears inta
 
 Questions or feedback? [Open an issue on GitHub](https://github.com/adrianwedd/home-assistant-obsidian/issues) or join the discussion in the [Home Assistant Community](https://community.home-assistant.io/).
 
-MIT License © 2025 Your Name <your-email@example.com> – see [LICENSE](https://github.com/adrianwedd/home-assistant-obsidian/blob/main/LICENSE)
+MIT License © 2025 Adrian Wedd <adrian@adrianwedd.com> – see [LICENSE](https://github.com/adrianwedd/home-assistant-obsidian/blob/main/LICENSE)
