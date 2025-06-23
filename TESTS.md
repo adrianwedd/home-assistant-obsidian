@@ -4,6 +4,8 @@ Pre-commit hooks now run locally without errors.
 `ha dev addon lint` could not be executed because the `ha` binary is missing in
 this environment.
 
+Run `pytest tests/test_version_sync.py` to confirm the config version matches the Docker image tag.
+
 | Platform | Pass/Fail | Memory (MB) | CPU (%) | Notes |
 |---|---|---|---|---|
 | Dev-container (amd64) | Fail | N/A | N/A | `dockerd` failed: permission denied |
