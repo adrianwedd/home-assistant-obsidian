@@ -1,0 +1,16 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Log files
+*.log
+*.log.*
+
+# Editor artifacts
+.DS_Store
+.vscode/
+.idea/
+*~
+*.swp
+*.swo
