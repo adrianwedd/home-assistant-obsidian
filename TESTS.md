@@ -1,8 +1,11 @@
 # Test results
 
 Pre-commit hooks now run locally without errors.
+The hook suite now includes `markdownlint` and `shellcheck`.
 `ha dev addon lint` could not be executed because the `ha` binary is missing in
 this environment.
+
+Run `pytest tests/test_version_sync.py` to confirm the config version matches the Docker image tag.
 
 | Platform | Pass/Fail | Memory (MB) | CPU (%) | Notes |
 |---|---|---|---|---|

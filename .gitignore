@@ -1,16 +1,30 @@
-# Python bytecode
+# Python artifacts
 __pycache__/
 *.py[cod]
-*$py.class
+*.so
+*.egg
+*.egg-info/
+.eggs/
+.Python
+dist/
+build/
+*.pyo
+*.pyd
+*.whl
+pip-wheel-metadata/
+.pytest_cache/
 
-# Log files
-*.log
-*.log.*
+# Virtual environments
+.env/
+.venv/
+venv/
+ENV/
 
-# Editor artifacts
-.DS_Store
+# VS Code settings
 .vscode/
-.idea/
-*~
-*.swp
-*.swo
+
+# Home Assistant runtime files
+home-assistant.log
+home-assistant.log.*
+home-assistant_v2.db*
+*.db

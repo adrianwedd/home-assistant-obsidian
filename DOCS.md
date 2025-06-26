@@ -1,9 +1,40 @@
-## Obsidian – Home Assistant Add‑on
+## Obsidian – Home Assistant Community Add-on
 
 This add‑on wraps the official **linuxserver/obsidian** container, giving you a full desktop version of Obsidian accessible from the Home Assistant sidebar via Ingress.
 
 It follows the "pure wrapper" philosophy – no Dockerfile here – so updates are instant and always track upstream.
 
+### Features
+
+|   |   |
+|---|---|
+| **Pure wrapper, zero build‑time** | Pulls the official multi‑arch `lscr.io/linuxserver/obsidian` image – installs in seconds and stays upstream‑fresh. |
+| **Ingress‑first UX** | Obsidian’s KasmVNC desktop appears in the HA sidebar – no extra ports or logins. |
+| **Snapshot‑friendly** | Vault lives under `/data`; large browser caches are excluded from HA backups. |
+| **Minimal setup** | Only `PUID`, `PGID`, and `TZ` options – sensible defaults included. |
+| **Watchdog & auto‑heal** | Supervisor pings the UI every 60 s and restarts automatically on failure. |
+| **CI‑powered updates** | Renovate + GitHub Actions bump the image tag and publish signed releases. |
+
+### Quick start
+
+1. **Add repository**
+   *Settings → Add-ons → Add-on Store → ⋮ → Repositories →*
+
+   ```text
+   https://github.com/adrianwedd/home-assistant-obsidian
+   ```
+
+2. **Install** the **Obsidian** add-on.
+3. **Configure** (optional – defaults work on many systems):
+
+   | Option | Default | Notes |
+   |--------|---------|-------|
+   | `puid` | `1000`  | Numeric user ID for file ownership. Run `id -u` on Linux. |
+   | `pgid` | `1000`  | Numeric group ID. Run `id -g` on Linux. |
+   | `tz`   | `UTC`   | Time-zone string, e.g. `Europe/London`. |
+
+4. **Start** the add-on → **Open Web UI** (or click the 🧠 Obsidian icon in the sidebar).
+5. **Create your vault** inside `/config/MyVault` (maps to the add-on’s persistent storage).
 ---
 
 ### Configuration
@@ -44,12 +75,12 @@ You can restore a snapshot on a new HA instance and your vault re‑appears inta
 
 ---
 
-### Resource Use
+### Security & resources
 
-* Typical idle RAM ≈ 350‑450 MB, peaks ≈ 600 MB during heavy vault sync
-* CPU load is modest; rendering is software‑only in v0.1
-* The add‑on reserves **512 MB** (`memory:` hint) – low‑RAM devices may show a Supervisor warning
-* Watchdog monitors `http://[HOST]:3000/` to keep the UI responsive
+* Runs **unprivileged**; no `full_access` or extra capabilities by default.
+* GPU passthrough is **deferred** to a future release.
+* Memory hint set to **512 MB** – HA will warn (but not block) on 1 GB devices.
+* Watchdog at `http://[HOST]:3000/` ensures automatic recovery if the VNC stack freezes.
 
 ---
 
@@ -73,4 +104,6 @@ You can restore a snapshot on a new HA instance and your vault re‑appears inta
 
 Questions or feedback? [Open an issue on GitHub](https://github.com/adrianwedd/home-assistant-obsidian/issues) or join the discussion in the [Home Assistant Community](https://community.home-assistant.io/).
 
-MIT License © 2025 Your Name <your-email@example.com> – see [LICENSE](https://github.com/adrianwedd/home-assistant-obsidian/blob/main/LICENSE)
+MIT © 2025 Adrian Wedd <adrian@adrianwedd.com>
+
+Upstream image © LinuxServer.io (GPL‑v3)

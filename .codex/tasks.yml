@@ -58,13 +58,13 @@
 - id: ADDON-009
   title: Compose README.md (root) and DOCS.md (add-on panel)
   kind: docs
-  status: todo
+  status: done
   requires: [ADDON-004, ADDON-005]
 
 - id: ADDON-010
   title: GitHub Action – Add-on linter on push/PR
   kind: ci
-  status: todo
+  status: done
   requires: [ADDON-003]
 
 - id: ADDON-011
@@ -118,3 +118,15 @@
   kind: ci
   status: backlog
   requires: [ADDON-013]
+
+- id: ADDON-018
+  title: Add .gitignore
+  kind: chore
+  status: done
+  requires: [ADDON-001]
+
+- id: ADDON-019
+  title: Add markdownlint and shellcheck pre-commit hooks
+  kind: chore
+  status: done
+  requires: [ADDON-018]

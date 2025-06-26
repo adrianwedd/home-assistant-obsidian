@@ -2,9 +2,18 @@
     "name": "Home Assistant Add-ons",
     "image": "ghcr.io/home-assistant/devcontainer:addons",
     "appPort": ["7123:8123", "7357:4357"],
+    "features": {
+      "ghcr.io/devcontainers/features/docker-in-docker:2": {
+        "version": "latest",
+        "moby": "false"
+      },
+      "ghcr.io/devcontainers/features/python:1": {
+        "version": "3.11"
+      }
+    },
     "postStartCommand": "bash devcontainer_bootstrap",
-    "postCreateCommand": "pip install pre-commit && pre-commit install && pip install git+https://github.com/home-assistant/cli@main",
-    "runArgs": ["-e", "GIT_EDITOR=code --wait", "--privileged", "-v", "/var/run/docker.sock:/var/run/docker.sock"],
+    "postCreateCommand": "pipx install pre-commit && pre-commit install --install-hooks && pipx install homeassistant-cli",
+    "runArgs": ["-e", "GIT_EDITOR=code --wait", "--privileged"],
     "remoteUser":"root",
     "containerEnv": {
       "WORKSPACE_DIRECTORY": "${containerWorkspaceFolder}"
