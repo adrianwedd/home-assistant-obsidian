@@ -5,51 +5,7 @@ SUPERVISOR_VERSON="$(curl -s https://version.home-assistant.io/dev.json | jq -e 
 DOCKER_TIMEOUT=30
 DOCKER_PID=0
 
-function start_docker() {
-    local starttime
-    local endtime
 
-    if grep -q 'Alpine|standard-WSL' /proc/version; then
-        update-alternatives --set iptables /usr/sbin/iptables-legacy || echo "Fails adjust iptables"
-        update-alternatives --set ip6tables /usr/sbin/iptables-legacy || echo "Fails adjust ip6tables"
-    fi
-
-    echo "Starting docker."
-    dockerd 2> /dev/null &
-    DOCKER_PID=$!
-
-    echo "Waiting for docker to initialize..."
-    starttime="$(date +%s)"
-    endtime="$(date +%s)"
-    until docker info >/dev/null 2>&1; do
-        if [ $((endtime - starttime)) -le $DOCKER_TIMEOUT ]; then
-            sleep 1
-            endtime=$(date +%s)
-        else
-            echo "Timeout while waiting for docker to come up"
-            exit 1
-        fi
-    done
-    echo "Docker was initialized"
-}
-
-function stop_docker() {
-    if [ -n "$DOCKER_PID" ]; then
-        echo "Stopping docker..."
-        kill "$DOCKER_PID"
-        local starttime="$(date +%s)"
-        local endtime="$(date +%s)"
-        while kill -0 "$DOCKER_PID" >/dev/null 2>&1; do
-            if [ $((endtime - starttime)) -le $DOCKER_TIMEOUT ]; then
-                sleep 1
-                endtime="$(date +%s)"
-            else
-                echo "Timeout while waiting for dockerd to stop"
-                break
-            fi
-        done
-    fi
-}
 
 function cleanup_lastboot() {
     mkdir -p /etc/docker
@@ -102,8 +58,7 @@ function init_udev() {
 
 echo "Start Test-Env"
 
-start_docker
-trap "stop_docker" ERR
+
 
 docker system prune -f
 
@@ -112,4 +67,3 @@ cleanup_docker
 init_dbus
 init_udev
 run_supervisor
-stop_docker
