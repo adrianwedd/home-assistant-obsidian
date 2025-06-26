@@ -8,6 +8,8 @@ arch:
   - amd64
   - armv7
 init: false
+icon: true
+logo: true
 image: lscr.io/linuxserver/obsidian:latest
 tmpfs: true
 ingress: true
