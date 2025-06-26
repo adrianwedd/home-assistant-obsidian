@@ -1,14 +1,121 @@
-- task: Update `README.md` License
+- id: ADDON-001
+  title: Update `README.md` License
+  kind: docs
   status: done
-- task: Add `finish` script to `run.sh`
+
+- id: ADDON-002
+  title: Add `finish` script to `run.sh`
+  kind: feature
   status: done
-- task: Add Renovate Configuration
+
+- id: ADDON-003
+  title: Add Renovate Configuration
+  kind: ci
   status: done
-- task: Add `codenotary.json`
+
+- id: ADDON-004
+  title: Add `codenotary.json`
+  kind: ci
   status: done
-- task: Add `ha` dev command to `TESTS.md`
+
+- id: ADDON-005
+  title: Add `ha` dev command to `TESTS.md`
+  kind: docs
   status: done
-- task: Add `icon.png` and `logo.png` to `repository.yaml`
+
+- id: ADDON-006
+  title: Add `armhf` to `arch` in `config.yaml`
+  kind: feature
   status: done
-- task: Add `armhf` to `arch` in `config.yaml`
+
+- id: ADDON-008
+  title: Commit branding assets and reference in config
+  kind: docs
   status: done
+  requires: [ADDON-003]
+  subtasks:
+    - id: ADDON-008a
+      title: Design icon.png 128×128 (transparent PNG)
+      status: done
+    - id: ADDON-008b
+      title: Design logo.png ≈250×100
+      status: done
+    - id: ADDON-008c
+      title: Add files to obsidian/ and update config.yaml
+      status: done
+
+- id: ADDON-009
+  title: Compose README.md (root) and DOCS.md (add-on panel)
+  kind: docs
+  status: done
+  requires: [ADDON-004, ADDON-005]
+
+- id: ADDON-010
+  title: GitHub Action – Add-on linter on push/PR
+  kind: ci
+  status: done
+  requires: [ADDON-003]
+
+- id: ADDON-011
+  title: GitHub Action – Release pipeline (tag → bump version → GitHub Release)
+  kind: ci
+  status: in-progress
+  requires: [ADDON-004]
+
+- id: ADDON-012
+  title: Functional smoke-test matrix
+  kind: test
+  status: in-progress
+  notes: |
+    Basic smoke-test script added. Docker socket and tools now in dev-container.
+    Still need to run tests on physical devices.
+  requires: [ADDON-004, ADDON-005, ADDON-010]
+  subtasks:
+    - id: ADDON-012a
+      title: Dev-container (amd64) test
+      status: in-progress
+    - id: ADDON-012b
+      title: Raspberry Pi 4 (aarch64) test
+      status: blocked
+    - id: ADDON-012c
+      title: x86-64 VM test
+      status: blocked
+    - id: ADDON-012d
+      title: Document results in TESTS.md
+      status: blocked
+
+- id: ADDON-013
+  title: Publish v0.1.0 Git tag (triggers release workflow)
+  kind: release
+  status: in-progress
+  requires: [ADDON-008, ADDON-009, ADDON-012, ADDON-011]
+
+- id: ADDON-015
+  title: Optional GPU toggle (`video: true`) in UI
+  kind: feature
+  status: backlog
+  requires: [ADDON-013]
+
+- id: ADDON-016
+  title: Advanced KasmVNC quality/resolution settings
+  kind: feature
+  status: backlog
+  requires: [ADDON-013]
+
+- id: ADDON-017
+  title: CodeNotary image signing in release pipeline
+  kind: ci
+  status: done
+  requires: [ADDON-013]
+
+- id: ADDON-018
+  title: Add .gitignore
+  kind: chore
+  status: done
+  requires: [ADDON-001]
+
+- id: ADDON-019
+  title: Add markdownlint and shellcheck pre-commit hooks
+  kind: chore
+  status: done
+  requires: [ADDON-018]

@@ -1,20 +1,36 @@
 // .devcontainer/devcontainer.json  — minimal & robust
 {
-  "name": "HA-Addon Dev",
-  "image": "ghcr.io/home-assistant/devcontainer:addons",
-
-  // Features
-  "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": { "moby": "false" },
-    "ghcr.io/devcontainers/features/python:1":           { "version": "3.11"  }
-  },
-
-  // ONE privileged flag – the Feature already passes the socket through
-  "runArgs": [ "--privileged" ],
-
-  // set up helpers once
-  "postCreateCommand": "pipx install pre-commit && pre-commit install",
-
-  // VS Code goodies
-  "extensions": [ "timonwong.shellcheck", "esbenp.prettier-vscode" ]
-}
+    "name": "Home Assistant Add-ons",
+    "image": "ghcr.io/home-assistant/devcontainer:addons",
+    "appPort": ["7123:8123", "7357:4357"],
+    "features": {
+      "ghcr.io/devcontainers/features/docker-in-docker:2": {
+        "version": "latest",
+        "moby": "false"
+      },
+      "ghcr.io/devcontainers/features/python:1": {
+        "version": "3.11"
+      }
+    },
+    "postStartCommand": "bash devcontainer_bootstrap",
+    "postCreateCommand": "pipx install pre-commit && pre-commit install --install-hooks && pipx install homeassistant-cli",
+    "runArgs": ["-e", "GIT_EDITOR=code --wait", "--privileged"],
+    "remoteUser":"root",
+    "containerEnv": {
+      "WORKSPACE_DIRECTORY": "${containerWorkspaceFolder}"
+    },
+    "extensions": ["timonwong.shellcheck", "esbenp.prettier-vscode"],
+    "mounts": [ "type=volume,target=/var/lib/docker" ],
+    "settings": {
+      "terminal.integrated.profiles.linux": {
+        "zsh": {
+          "path": "/usr/bin/zsh"
+        }
+      },
+      "terminal.integrated.defaultProfile.linux": "zsh",
+      "editor.formatOnPaste": false,
+      "editor.formatOnSave": true,
+      "editor.formatOnType": true,
+      "files.trimTrailingWhitespace": true
+    }
+  }

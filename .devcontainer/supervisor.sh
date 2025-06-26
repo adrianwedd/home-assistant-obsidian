@@ -1,9 +1,8 @@
 #!/bin/bash
+# shellcheck shell=bash disable=SC2155
 set -eE
 
-SUPERVISOR_VERSON="$(curl -s https://version.home-assistant.io/dev.json | jq -e -r '.supervisor')"
-DOCKER_TIMEOUT=30
-DOCKER_PID=0
+SUPERVISOR_VERSION="$(curl -s https://version.home-assistant.io/dev.json | jq -e -r '.supervisor')"
 
 
 
@@ -28,7 +27,7 @@ function run_supervisor() {
         -e SUPERVISOR_NAME=hassio_supervisor \
         -e SUPERVISOR_MACHINE=qemux86-64 \
         -e HOMEASSISTANT_REPOSITORY=homeassistant/qemux86-64-homeassistant \
-        ghcr.io/home-assistant/amd64-hassio-supervisor:"${SUPERVISOR_VERSON}"
+        ghcr.io/home-assistant/amd64-hassio-supervisor:"${SUPERVISOR_VERSION}"
 }
 
 function init_dbus() {

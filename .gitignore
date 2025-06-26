@@ -1,0 +1,30 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+.eggs/
+.Python
+dist/
+build/
+*.pyo
+*.pyd
+*.whl
+pip-wheel-metadata/
+.pytest_cache/
+
+# Virtual environments
+.env/
+.venv/
+venv/
+ENV/
+
+# VS Code settings
+.vscode/
+
+# Home Assistant runtime files
+home-assistant.log
+home-assistant.log.*
+home-assistant_v2.db*
+*.db
