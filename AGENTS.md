@@ -73,7 +73,7 @@ Agents must **never** merge failing CI.
 
 | File | Who edits | Rule |
 |------|-----------|------|
-| `obsidian/config.yaml` | Tasks `ADDON-004`, `ADDON-008c`, `ADDON-013` only | `version:` **must equal** Docker image tag. |
+| `obsidian/config.yaml` | Tasks `ADDON-004`, `ADDON-008c`, `ADDON-013` only | Keep `image:` untagged; `version` is bumped by the release workflow. |
 | `run.sh` | Task `ADDON-005` | Keep shebang `#!/usr/bin/with-contenv bashio`. |
 | `README.md` & `DOCS.md` | Task `ADDON-009` or docs fixes | Must stay in sync; update both. |
 | `translations/en.yaml` | Task `ADDON-006` | Always valid YAML; keys match `config.yaml` options. |
@@ -96,7 +96,7 @@ Record pass/fail and resource metrics in `/TESTS.md`.
 
 | Action | Allowed by | Procedure |
 |--------|-----------|-----------|
-| Bumping `version` & image tag | `ADDON-013` release workflow only | Never bump manually outside the workflow. |
+| Bumping `version` | `ADDON-013` release workflow only | Workflow keeps `image:` untagged; never bump manually. |
 | Enabling `full_access` | Future task only | Must include detailed security rationale in PR. |
 | Marketing / announcements | Out of scope | Not tracked in `.codex/tasks.yml`. |
 
