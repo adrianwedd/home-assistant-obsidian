@@ -17,7 +17,8 @@
     "runArgs": ["-e", "GIT_EDITOR=code --wait", "--privileged"],
     "remoteUser":"root",
     "containerEnv": {
-      "WORKSPACE_DIRECTORY": "${containerWorkspaceFolder}"
+      "WORKSPACE_DIRECTORY": "${containerWorkspaceFolder}",
+      "LIBGL_ALWAYS_SOFTWARE": "1"
     },
     "extensions": ["timonwong.shellcheck", "esbenp.prettier-vscode"],
     "mounts": [ "type=volume,target=/var/lib/docker" ],
