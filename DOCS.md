@@ -100,6 +100,7 @@ You can restore a snapshot on a new HA instance and your vault re‑appears inta
 | Blank screen / reconnect loop | Clear browser site‑data or restart the add‑on. |
 | Vault not saved | Ensure you created it under `/config/…`; anything under `/home` vanishes on restart. |
 | Add‑on keeps restarting | Check Supervisor log – watchdog fires if port 3000 stops responding. |
+| `Failed to create gbm` in logs | Set `LIBGL_ALWAYS_SOFTWARE=1` or mount `/dev/dri` with the `video` group. Hardware acceleration is not yet supported. |
 
 ---
 
