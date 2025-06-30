@@ -4,6 +4,14 @@ set -euo pipefail
 # Install Python dependencies for tests
 pip install --no-cache-dir -q pytest docker requests pyyaml
 
+# Stop optional GUI services that clutter logs
+for proc in openbox Xvnc kasmvnc; do
+    if pgrep -f "$proc" >/dev/null 2>&1; then
+        echo "Stopping $proc"
+        pkill -f "$proc" || true
+    fi
+done
+
 # Start Home Assistant Supervisor for development if not already running
 if ! docker ps --format '{{.Names}}' | grep -q hassio_supervisor; then
     bash .devcontainer/supervisor.sh >/tmp/supervisor.log 2>&1 &
