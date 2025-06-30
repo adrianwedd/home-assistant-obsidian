@@ -119,3 +119,8 @@
   kind: chore
   status: done
   requires: [ADDON-018]
+
+- id: ADDON-020
+  title: Disable VNC and Openbox in devcontainer
+  kind: chore
+  status: done
