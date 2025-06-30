@@ -59,7 +59,7 @@
 - id: ADDON-011
   title: GitHub Action – Release pipeline (tag → bump version → GitHub Release)
   kind: ci
-  status: in-progress
+  status: done
   requires: [ADDON-004]
 
 - id: ADDON-012
