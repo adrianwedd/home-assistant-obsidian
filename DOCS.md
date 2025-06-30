@@ -35,6 +35,9 @@ It follows the "pure wrapper" philosophy – no Dockerfile here – so updates a
 
 4. **Start** the add-on → **Open Web UI** (or click the 🧠 Obsidian icon in the sidebar).
 5. **Create your vault** inside `/config/MyVault` (maps to the add-on’s persistent storage).
+
+The dev container runs `devcontainer_bootstrap` on startup to install test dependencies and start a lightweight Supervisor.
+
 ---
 
 ### Configuration

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Install Python dependencies for tests
+pip install --no-cache-dir -q pytest docker requests pyyaml
+
+# Start Home Assistant Supervisor for development if not already running
+if ! docker ps --format '{{.Names}}' | grep -q hassio_supervisor; then
+    bash .devcontainer/supervisor.sh >/tmp/supervisor.log 2>&1 &
+fi
+
+echo "Devcontainer bootstrap complete."
