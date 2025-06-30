@@ -49,6 +49,7 @@ This repository wraps the `lscr.io/linuxserver/obsidian` container without a Doc
 
 * Runs **unprivileged**; no `full_access` or extra capabilities by default.
 * GPU passthrough is **deferred** to a future release.
+* If logs show `Failed to create gbm`, set `LIBGL_ALWAYS_SOFTWARE=1` or mount `/dev/dri` with the `video` group.
 * Automatic restart via healthcheck keeps the UI responsive.
 
 ---
