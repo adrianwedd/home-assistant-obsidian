@@ -69,6 +69,11 @@ and launch a lightweight Home Assistant Supervisor.
 *Lint locally:* `ha dev addon lint`
 CI must pass and docs remain in sync for PRs to be merged.
 
+## Contributing
+
+Use commit messages that start with `ADDON-XXX:` where `XXX` is the task number.
+Run `pre-commit run --all-files` and `ha dev addon lint` before pushing.
+
 ---
 
 ## 🗺 Roadmap

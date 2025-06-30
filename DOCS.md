@@ -38,6 +38,11 @@ It follows the "pure wrapper" philosophy – no Dockerfile here – so updates a
 
 The dev container runs `devcontainer_bootstrap` on startup to install test dependencies and start a lightweight Supervisor.
 
+### Contributing
+
+Use commit messages prefixed with `ADDON-XXX:` where `XXX` matches the task ID.
+Run `pre-commit run --all-files` and `ha dev addon lint` before pushing changes.
+
 ---
 
 ### Configuration
