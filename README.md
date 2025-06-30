@@ -63,6 +63,9 @@ code .
 # Reopen in Dev Container → HA boots on http://localhost:8123
 ```
 
+The container runs `devcontainer_bootstrap` on start to install test dependencies
+and launch a lightweight Home Assistant Supervisor.
+
 *Lint locally:* `ha dev addon lint`
 CI must pass and docs remain in sync for PRs to be merged.
 
