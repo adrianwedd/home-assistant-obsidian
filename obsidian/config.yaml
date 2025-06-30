@@ -9,8 +9,6 @@ arch:
   - armv7
   - armhf
 init: false
-icon: true
-logo: true
 image: lscr.io/linuxserver/obsidian
 tmpfs: true
 ingress: true
@@ -18,13 +16,9 @@ ingress_port: 3000
 panel_icon: mdi:brain
 panel_title: Obsidian
 ports: {}
-watchdog: http://[HOST]:3000/
-memory: 512
 backup_exclude:
   - BrowserCache/
   - .cache/
-map:
-  - data:rw
 options:
   puid: 1000
   pgid: 1000
