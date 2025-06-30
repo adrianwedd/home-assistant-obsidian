@@ -18,7 +18,7 @@ jobs:
           sudo chmod +x /usr/local/bin/yq
           VERSION="${GITHUB_REF_NAME#v}"
           yq -i ".version = \"${VERSION}\"" obsidian/config.yaml
-          yq -i ".image = \"lscr.io/linuxserver/obsidian:${VERSION}\"" obsidian/config.yaml
+          yq -i ".image = \"lscr.io/linuxserver/obsidian\"" obsidian/config.yaml
 
       - name: Commit files
         run: |

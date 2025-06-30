@@ -1,8 +1,9 @@
 import yaml
 
-def test_version_matches_image_tag():
+def test_image_is_untagged_and_version_set():
     with open('obsidian/config.yaml') as f:
         cfg = yaml.safe_load(f)
+    image = str(cfg['image'])
     version = str(cfg['version'])
-    image_tag = str(cfg['image']).split(':')[-1]
-    assert version == image_tag, f"version {version} does not match image tag {image_tag}"
+    assert ':' not in image, 'image must not include a tag'
+    assert version, 'version must be specified'
