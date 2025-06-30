@@ -46,8 +46,7 @@ You can restore a snapshot on a new HA instance and your vault re‑appears inta
 
 * Typical idle RAM ≈ 350‑450 MB, peaks ≈ 600 MB during heavy vault sync
 * CPU load is modest; rendering is software‑only in v0.1
-* The add‑on reserves **512 MB** (`memory:` hint) – low‑RAM devices may show a Supervisor warning
-* Watchdog monitors `http://[HOST]:3000/` to keep the UI responsive
+* Automatic restart via healthcheck keeps the UI responsive
 
 ---
 

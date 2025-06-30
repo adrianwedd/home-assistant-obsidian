@@ -12,7 +12,7 @@ It follows the "pure wrapper" philosophy – no Dockerfile here – so updates a
 | **Ingress‑first UX** | Obsidian’s KasmVNC desktop appears in the HA sidebar – no extra ports or logins. |
 | **Snapshot‑friendly** | Vault lives under `/data`; large browser caches are excluded from HA backups. |
 | **Minimal setup** | Only `PUID`, `PGID`, and `TZ` options – sensible defaults included. |
-| **Watchdog & auto‑heal** | Supervisor pings the UI every 60 s and restarts automatically on failure. |
+| **Healthcheck & auto‑heal** | Supervisor monitors the UI and restarts automatically on failure. |
 | **CI‑powered updates** | Renovate + GitHub Actions bump the image tag and publish signed releases. |
 
 ### Quick start
@@ -87,12 +87,9 @@ You can restore a snapshot on a new HA instance and your vault re‑appears inta
 
 * Runs **unprivileged**; no `full_access` or extra capabilities by default.
 * GPU passthrough is **deferred** to a future release.
-* Memory hint set to **512 MB** – HA will warn (but not block) on 1 GB devices.
-* Watchdog at `http://[HOST]:3000/` ensures automatic recovery if the VNC stack freezes.
+* Automatic restart via healthcheck keeps the UI responsive.
 * Typical idle RAM ≈ 350‑450 MB, peaks ≈ 600 MB during heavy vault sync
 * CPU load is modest; rendering is software‑only in v0.1
-* The add‑on reserves **512 MB** (`memory:` hint) – low‑RAM devices may show a Supervisor warning
-* Watchdog monitors `http://[HOST]:3000/` to keep the UI responsive
 
 ---
 

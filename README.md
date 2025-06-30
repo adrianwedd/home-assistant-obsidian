@@ -17,7 +17,7 @@ This repository wraps the `lscr.io/linuxserver/obsidian` container without a Doc
 | **Ingress‑first UX** | Obsidian’s KasmVNC desktop appears in the HA sidebar – no extra ports or logins. |
 | **Snapshot‑friendly** | Vault lives under `/data`; large browser caches are excluded from HA backups. |
 | **Minimal setup** | Only `PUID`, `PGID`, and `TZ` options – sensible defaults included. |
-| **Watchdog & auto‑heal** | Supervisor pings the UI every 60 s and restarts automatically on failure. |
+| **Healthcheck & auto‑heal** | Supervisor monitors the UI and restarts automatically on failure. |
 | **CI‑powered updates** | Renovate + GitHub Actions bump the image tag and publish signed releases. |
 
 ---
@@ -49,8 +49,7 @@ This repository wraps the `lscr.io/linuxserver/obsidian` container without a Doc
 
 * Runs **unprivileged**; no `full_access` or extra capabilities by default.
 * GPU passthrough is **deferred** to a future release.
-* Memory hint set to **512 MB** – HA will warn (but not block) on 1 GB devices.
-* Watchdog at `http://[HOST]:3000/` ensures automatic recovery if the VNC stack freezes.
+* Automatic restart via healthcheck keeps the UI responsive.
 
 ---
 
@@ -86,6 +85,5 @@ Run `pre-commit run --all-files` and `ha dev addon lint` before pushing.
 
 ## 📜 Licence
 
-<<<<<<< HEAD
 MIT © 2025 Adrian Wedd <adrian@adrianwedd.com>
 Upstream image © LinuxServer.io (GPL‑v3)
