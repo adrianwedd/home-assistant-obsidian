@@ -89,7 +89,7 @@ This phase focuses on the meticulous construction of the addon's central manifes
 The first step is to give the addon a clear and professional identity.\[5\]
 
 * name: "Obsidian"
-* version: "0.1.0"
+* version: "1.5.12"
 * slug: "obsidian"
 * description: "A secure, self-hosted digital brain with Home Assistant integration."
 * url: A link to the addon's GitHub repository.

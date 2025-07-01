@@ -64,7 +64,7 @@ You can restore a snapshot on a new HA instance and your vault re‑appears inta
 
 | Version | Date | Notes |
 |---------|------|-------|
-| `0.1.0` | 2025‑06‑22 | Initial public release – pure wrapper, Ingress, multi‑arch. |
+| `1.5.12` | 2025‑06‑22 | Initial public release – pure wrapper, Ingress, multi‑arch. |
 
 ---
 
