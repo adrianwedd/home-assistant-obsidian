@@ -1,4 +1,4 @@
-# AGENTS.md
+# 🌀 AGENTS.md | Project Conduct + Agent Rituals
 Guidelines for AI (and human) contributors to **adrianwedd/home-assistant-obsidian**
 
 This repository hosts a **pure-wrapper Home Assistant add-on** that embeds the
@@ -7,19 +7,7 @@ The project is managed by granular tasks in `.codex/tasks.yml`.
 Follow the rules below so automated tools, ChatGPT prompts, and human PRs all
 produce consistent, merge-ready work.
 
----
-
-## 1 ️⃣  Legacy Project Pillars (ideals, under review)
-
-| Pillar | Why it matters |
-|--------|----------------|
-| **Pure wrapper** – no Dockerfile, only `image:` key | Keeps builds instant, leverages upstream multi-arch image. |
-| **Init pattern** – `init: false` + `run.sh` → `exec /init` | Prevents double s6-overlay and mirrors official add-on style. |
-| **Symlink fix** – `/config` → `/data` | Guarantees data persistence across restarts & upgrades. |
-| **Ingress-first** – no host ports | Seamless SSO; smaller attack surface. |
-| **Minimal privileges** – unprivileged by default | Security trumps convenience. `full_access:` is backlog only. |
-
-Any change that breaks a pillar should have good reason.
+⧖ This isn’t just a ruleset—it’s a covenant between human and machine contributors. Precision matters, but so does flow. These rituals are here to maintain clarity, not control.
 
 ---
 
@@ -30,6 +18,8 @@ Any change that breaks a pillar should have good reason.
 
 * Update the `status:` field (`todo` → `in-progress` → `done`) in the same PR
   that implements the task.
+
+* Tasks may contain reflective comments or notes-to-future-agents—leave breadcrumbs, not blind spots.
 
 ### 2.2 Commit message convention
 
@@ -65,7 +55,7 @@ PRs must target `main`.
 | **Release workflow** | Git tag `v*.*.*` | Bumps `version` in `config.yaml`, publishes GitHub Release. |
 | **Renovate** | Nightly | Opens PR when new linuxserver/obsidian tag appears. |
 
-Agents must **never** merge failing CI.
+Agents must **never** merge failing CI—but are encouraged to propose diagnostic improvements when failure patterns emerge.
 
 ---
 
@@ -111,10 +101,10 @@ Record pass/fail and resource metrics in `/TESTS.md`.
 
 ---
 
-## 9 ️⃣  When in doubt…
+## 9 ️⃣  When intuition stalls…
 
 1. Search the official HA add-on docs.
 2. Compare with patterns in **git_pull**, **glances**, **node-red** add-ons.
-3. Open an issue tagged **question** before coding.
+3. Don’t be afraid to document uncertainty. Leave notes, questions, or `# TODO: REASONING` comments. The next agent will thank you.
 
 Happy hacking!
