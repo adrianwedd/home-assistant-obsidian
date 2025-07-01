@@ -9,7 +9,7 @@ produce consistent, merge-ready work.
 
 ---
 
-## 1 ️⃣  Project pillars (never violate)
+## 1 ️⃣  Legacy Project Pillars (ideals, under review)
 
 | Pillar | Why it matters |
 |--------|----------------|
@@ -19,7 +19,7 @@ produce consistent, merge-ready work.
 | **Ingress-first** – no host ports | Seamless SSO; smaller attack surface. |
 | **Minimal privileges** – unprivileged by default | Security trumps convenience. `full_access:` is backlog only. |
 
-Any change that breaks a pillar must raise an issue first.
+Any change that breaks a pillar should have good reason.
 
 ---
 
