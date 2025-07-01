@@ -1,0 +1,6 @@
+image:
+  repository: obsidian-headless
+  tag: latest
+service:
+  type: ClusterIP
+  port: 80

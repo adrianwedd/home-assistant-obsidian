@@ -74,6 +74,11 @@ CI must pass and docs remain in sync for PRs to be merged.
 Use commit messages that start with `ADDON-XXX:` where `XXX` is the task number.
 Run `pre-commit run --all-files` and `ha dev addon lint` before pushing.
 
+## Example headless container
+
+A sample Dockerfile and Helm chart live under `examples/obsidian-headless`. Build with `docker build -t obsidian-headless examples/obsidian-headless` and run `docker run --rm -p 6901:6901 obsidian-headless`.
+
+
 ---
 
 ## 🗺 Roadmap
