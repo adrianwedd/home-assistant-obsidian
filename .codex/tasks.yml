@@ -124,3 +124,8 @@
   title: Disable VNC and Openbox in devcontainer
   kind: chore
   status: done
+
+- id: ADDON-021
+  title: Example Dockerfile with Helm chart for headless Obsidian
+  kind: docs
+  status: done

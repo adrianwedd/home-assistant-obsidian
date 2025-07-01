@@ -1,0 +1,13 @@
+{
+  "name": "Obsidian Headless",
+  "build": { "dockerfile": "../Dockerfile" },
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "runArgs": [
+    "-p", "6901:6901",
+    "-e", "DISPLAY=:0",
+    "-e", "LIBGL_ALWAYS_SOFTWARE=1"
+  ],
+  "remoteUser": "root"
+}
