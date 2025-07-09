@@ -4,8 +4,8 @@ This document outlines the testing procedures and results for the Home Assistant
 
 Pre-commit hooks now run locally without errors.
 The hook suite now includes `markdownlint` and `shellcheck`.
-`ha dev addon lint` could not be executed because the `ha` binary is missing in
-this environment.
+`ha dev addon lint` works inside the dev container because `pipx` installs the Home Assistant CLI (`homeassistant-cli`).
+Install the CLI manually if running outside the container.
 
 Run `pytest tests/test_version_sync.py` to confirm the config version matches the Docker image tag.
 
@@ -94,7 +94,7 @@ For each environment, the following test cases will be executed and their result
 **Objective:** Verify that the add-on passes the official Home Assistant linter.
 
 *   **Steps:**
-    1.  Install the Home Assistant CLI.
+    1.  Install the Home Assistant CLI. The dev container already does this with `pipx install homeassistant-cli`.
     2.  Run `ha dev addon lint` from the root of the repository.
 *   **Expected Result:** The linter should pass without any errors.
 
