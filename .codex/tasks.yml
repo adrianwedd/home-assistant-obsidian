@@ -129,3 +129,13 @@
   title: Example Dockerfile with Helm chart for headless Obsidian
   kind: docs
   status: done
+
+- id: ADDON-022
+  title: `ha` CLI missing for local linting
+  kind: chore
+  priority: 1
+  status: blocked
+  notes: |
+    Running `ha dev addon lint` fails with `ha: command not found`.
+    Install the Home Assistant CLI binary or adjust docs to use the
+    correct command.
