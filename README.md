@@ -18,7 +18,7 @@ This repository wraps the `lscr.io/linuxserver/obsidian` container without a Doc
 | **Snapshot‑friendly** | Vault lives under `/data`; large browser caches are excluded from HA backups. |
 | **Minimal setup** | Only `PUID`, `PGID`, and `TZ` options – sensible defaults included. |
 | **Healthcheck & auto‑heal** | Supervisor monitors the UI and restarts automatically on failure. |
-| **CI‑powered updates** | Renovate + GitHub Actions bump the image tag and publish signed releases. |
+| **CI‑powered updates** | Renovate + GitHub Actions bump the image tag. CodeNotary signing planned (ADDON-017). |
 
 ---
 
