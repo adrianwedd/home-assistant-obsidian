@@ -134,8 +134,7 @@
   title: `ha` CLI missing for local linting
   kind: chore
   priority: 1
-  status: blocked
+  status: done
   notes: |
-    Running `ha dev addon lint` fails with `ha: command not found`.
-    Install the Home Assistant CLI binary or adjust docs to use the
-    correct command.
+    `ha dev addon lint` works in the dev container because `pipx` installs
+    the Home Assistant CLI. Docs updated to mention this.
