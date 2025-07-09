@@ -28,6 +28,19 @@ jobs:
           git commit -m "Release ${{ github.ref_name }}"
           git push
 
+      - name: Sign and push Docker image
+        env:
+          IMAGE: ghcr.io/${{ github.repository }}:${{ github.ref_name }}
+          VCN_API_KEY: ${{ secrets.VCN_API_KEY }}
+        run: |
+          docker pull lscr.io/linuxserver/obsidian:latest
+          docker tag lscr.io/linuxserver/obsidian:latest "$IMAGE"
+          curl -sfL https://getvcn.sh | sh
+          vcn login --api-key "$VCN_API_KEY"
+          vcn notarize --file codenotary.json docker://$IMAGE
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+          docker push "$IMAGE"
+
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:

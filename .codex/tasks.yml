@@ -105,7 +105,7 @@
 - id: ADDON-017
   title: CodeNotary image signing in release pipeline
   kind: ci
-  status: backlog
+  status: done
   requires: [ADDON-013]
 
 - id: ADDON-018
