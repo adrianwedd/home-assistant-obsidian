@@ -33,3 +33,8 @@ home-assistant_v2.db*
 
 #Mac bits
 .DS_Store
+
+# Dev bits
+screenshots/
+logs/
+*.log
