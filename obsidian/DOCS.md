@@ -1,6 +1,8 @@
-## Obsidian – Home Assistant Add‑on
+## 🧠 Obsidian – Home Assistant Add‑on | Pure Wrapper. Full Reflection
 
 This add‑on wraps the official **linuxserver/obsidian** container, giving you a full desktop version of Obsidian accessible from the Home Assistant sidebar via Ingress.
+
+⧖ This container isn’t just an add-on—it’s your vault interface to structured knowledge under total local control. Built to be elegant, unbloated, and composable with your cognitive workflows.
 
 ---
 
@@ -21,7 +23,7 @@ After editing, **Save** then **Restart** the add‑on for changes to take effect
 ### Accessing Obsidian
 
 1. Start the add‑on, wait ≈ 30 s for first‑time initialisation.
-2. Click **Open Web UI** or the 🧠 Obsidian sidebar entry.
+2. Click **Open Web UI** (or the 🧠 sidebar icon to enter vaultspace).
 3. In the VNC desktop choose **Create new vault** and point it to `/config/MyVault`.
    `/config` inside the container maps to the add‑on’s persistent `/data` directory.
 
@@ -47,6 +49,7 @@ You can restore a snapshot on a new HA instance and your vault re‑appears inta
 * Typical idle RAM ≈ 350‑450 MB, peaks ≈ 600 MB during heavy vault sync
 * CPU load is modest; rendering is software‑only in v0.1
 * Automatic restart via healthcheck keeps the UI responsive
+GODMODE builds should log metrics to `/config/perf.json` for long-term vault performance tuning.
 
 ---
 
@@ -69,3 +72,5 @@ You can restore a snapshot on a new HA instance and your vault re‑appears inta
 ---
 
 Questions or feedback? [Open an issue on GitHub](https://github.com/adrianwedd/home-assistant-obsidian/issues) or join the discussion in the [Home Assistant Community](https://community.home-assistant.io/).
+
+⧖ Reflect often. Write freely. Fork bravely.

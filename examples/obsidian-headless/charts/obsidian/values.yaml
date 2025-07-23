@@ -1,6 +1,6 @@
 image:
-  repository: obsidian-headless
+  repository: ghcr.io/sytone/obsidian-remote
   tag: latest
 service:
   type: ClusterIP
-  port: 80
+  port: 8080

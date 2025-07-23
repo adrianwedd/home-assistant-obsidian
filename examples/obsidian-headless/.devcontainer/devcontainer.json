@@ -5,9 +5,7 @@
     "terminal.integrated.shell.linux": "/bin/bash"
   },
   "runArgs": [
-    "-p", "6901:6901",
-    "-e", "DISPLAY=:0",
-    "-e", "LIBGL_ALWAYS_SOFTWARE=1"
+    "-p", "8080:8080"
   ],
   "remoteUser": "root"
 }

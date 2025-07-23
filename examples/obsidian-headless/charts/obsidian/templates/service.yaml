@@ -6,7 +6,7 @@ spec:
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
-      targetPort: 6901
+      targetPort: 8080
       name: http
   selector:
     app: obsidian

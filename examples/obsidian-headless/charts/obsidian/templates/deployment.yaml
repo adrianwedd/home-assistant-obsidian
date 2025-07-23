@@ -15,10 +15,5 @@ spec:
       containers:
         - name: obsidian
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          env:
-            - name: DISPLAY
-              value: ":0"
-            - name: LIBGL_ALWAYS_SOFTWARE
-              value: "1"
           ports:
-            - containerPort: 6901
+            - containerPort: 8080

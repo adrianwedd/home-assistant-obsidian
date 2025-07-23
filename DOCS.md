@@ -1,8 +1,10 @@
-## Obsidian – Home Assistant Community Add-on
+## 🧠 Obsidian – Home Assistant Community Add-on | Pure Wrapper. Zero Bloat. Full GODMODE
 
 This add‑on wraps the official **linuxserver/obsidian** container, giving you a full desktop version of Obsidian accessible from the Home Assistant sidebar via Ingress.
 
 It follows the "pure wrapper" philosophy – no Dockerfile here – so updates are instant and always track upstream.
+
+⧖ No build chains. No overengineering. This is a fast lane from sidebar to second brain. Upstream fidelity meets Home Assistant elegance.
 
 ### Features
 
@@ -33,12 +35,14 @@ It follows the "pure wrapper" philosophy – no Dockerfile here – so updates a
    | `pgid` | `1000`  | Numeric group ID. Run `id -g` on Linux. |
    | `tz`   | `UTC`   | Time-zone string, e.g. `Europe/London`. |
 
-4. **Start** the add-on → **Open Web UI** (or click the 🧠 Obsidian icon in the sidebar).
+4. **Start** the add-on → **Open Web UI** (🧠 icon in sidebar = portal to your vault OS).
 5. **Create your vault** inside `/config/MyVault` (maps to the add-on’s persistent storage).
 
 The dev container runs `devcontainer_bootstrap` on startup to install test dependencies and start a lightweight Supervisor.
 
 ### Contributing
+
+Reflective edits welcome – if your tweak adds resilience, elegance, or creative misuse potential, lean in and PR it.
 
 Use commit messages prefixed with `ADDON-XXX:` where `XXX` matches the task ID.
 Run `pre-commit run --all-files` and `ha dev addon lint` before pushing changes.
@@ -117,3 +121,5 @@ Questions or feedback? [Open an issue on GitHub](https://github.com/adrianwedd/h
 MIT © 2025 Adrian Wedd <adrian@adrianwedd.com>
 
 Upstream image © LinuxServer.io (GPL‑v3)
+
+⧖ You’re now operating at the edges of local-first knowledge management. No excuses. No bloat. Just Obsidian, everywhere.
