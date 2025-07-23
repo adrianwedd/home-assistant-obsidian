@@ -67,7 +67,7 @@ GODMODE builds should log metrics to `/config/perf.json` for long-term vault per
 
 | Version | Date | Notes |
 |---------|------|-------|
-| `1.5.13` | 2025‑07‑23 | Updated to headless sytone/obsidian-remote image. |
+| `1.5.14` | 2025‑07‑23 | Updated to headless sytone/obsidian-remote image with `latest` tag. |
 
 ---
 

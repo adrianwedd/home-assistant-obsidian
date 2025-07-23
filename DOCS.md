@@ -10,7 +10,7 @@ It follows the "pure wrapper" philosophy – no Dockerfile here – so updates a
 
 |   |   |
 |---|---|
-| **Pure wrapper, zero build‑time** | Pulls the official multi‑arch `ghcr.io/sytone/obsidian-remote` image – installs in seconds and stays upstream‑fresh. |
+| **Pure wrapper, zero build‑time** | Pulls the official multi‑arch `ghcr.io/sytone/obsidian-remote:latest` image – installs in seconds and stays upstream‑fresh. |
 | **Ingress‑first UX** | Obsidian’s web UI appears in the HA sidebar – no extra ports or logins. |
 | **Snapshot‑friendly** | Vault lives under `/data`; large browser caches are excluded from HA backups. |
 | **Minimal setup** | Only `PUID`, `PGID`, and `TZ` options – sensible defaults included. |
@@ -112,7 +112,7 @@ You can restore a snapshot on a new HA instance and your vault re‑appears inta
 
 | Version | Date | Notes |
 |---------|------|-------|
-| `1.5.13` | 2025‑07‑23 | Updated to headless sytone/obsidian-remote image. |
+| `1.5.14` | 2025‑07‑23 | Updated to headless sytone/obsidian-remote image with `latest` tag. |
 
 ---
 

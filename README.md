@@ -15,7 +15,7 @@ This repository wraps the `ghcr.io/sytone/obsidian-remote` container without a D
 
 |   |   |
 |---|---|
-| **Pure wrapper, zero build‑time** | Pulls the official multi‑arch `ghcr.io/sytone/obsidian-remote` image – installs in seconds and stays upstream‑fresh. |
+| **Pure wrapper, zero build‑time** | Pulls the official multi‑arch `ghcr.io/sytone/obsidian-remote:latest` image – installs in seconds and stays upstream‑fresh. |
 | **Ingress‑first UX** | Obsidian’s web UI appears in the HA sidebar – no extra ports or logins. |
 | **Snapshot‑friendly** | Vault lives under `/data`; large browser caches are excluded from HA backups. |
 | **Minimal setup** | Only `PUID`, `PGID`, and `TZ` options – sensible defaults included. |
