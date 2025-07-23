@@ -129,3 +129,12 @@
   title: Example Dockerfile with Helm chart for headless Obsidian
   kind: docs
   status: done
+
+- id: ADDON-022
+  title: `ha` CLI missing for local linting
+  kind: chore
+  priority: 1
+  status: done
+  notes: |
+    `ha dev addon lint` works in the dev container because `pipx` installs
+    the Home Assistant CLI. Docs updated to mention this.

@@ -30,3 +30,6 @@ home-assistant.log
 home-assistant.log.*
 home-assistant_v2.db*
 *.db
+
+#Mac bits
+.DS_Store
