@@ -1,7 +1,7 @@
 # 🧠 Obsidian – Home Assistant Community Add-on | Sidebar to Second Brain
-*A private, full-desktop Obsidian vault streamed via KasmVNC and embedded directly in your Home Assistant UI.*
+*A private, web-based Obsidian vault embedded directly in your Home Assistant UI.*
 
-This repository wraps the `lscr.io/linuxserver/obsidian` container without a Dockerfile, keeping the add-on lightweight and always up to date.
+This repository wraps the `ghcr.io/sytone/obsidian-remote` container without a Dockerfile, keeping the add-on lightweight and always up to date.
 
 ⧖ This add-on is a conduit—not just a container. It gives you frictionless access to a private Obsidian vault, embedded seamlessly in your home infrastructure. No Dockerfile. No bloat. Just reflection.
 
@@ -15,8 +15,8 @@ This repository wraps the `lscr.io/linuxserver/obsidian` container without a Doc
 
 |   |   |
 |---|---|
-| **Pure wrapper, zero build‑time** | Pulls the official multi‑arch `lscr.io/linuxserver/obsidian` image – installs in seconds and stays upstream‑fresh. |
-| **Ingress‑first UX** | Obsidian’s KasmVNC desktop appears in the HA sidebar – no extra ports or logins. |
+| **Pure wrapper, zero build‑time** | Pulls the official multi‑arch `ghcr.io/sytone/obsidian-remote` image – installs in seconds and stays upstream‑fresh. |
+| **Ingress‑first UX** | Obsidian’s web UI appears in the HA sidebar – no extra ports or logins. |
 | **Snapshot‑friendly** | Vault lives under `/data`; large browser caches are excluded from HA backups. |
 | **Minimal setup** | Only `PUID`, `PGID`, and `TZ` options – sensible defaults included. |
 | **Healthcheck & auto‑heal** | Supervisor monitors the UI and restarts automatically on failure. |
@@ -51,7 +51,6 @@ This repository wraps the `lscr.io/linuxserver/obsidian` container without a Doc
 
 * Runs **unprivileged**; no `full_access` or extra capabilities by default.
 * GPU passthrough is **deferred** to a future release.
-* The dev container sets `LIBGL_ALWAYS_SOFTWARE=1` by default; mount `/dev/dri` with the `video` group for GPU passthrough.
 * Automatic restart via healthcheck keeps the UI responsive.
 
 GODMODE builds log performance snapshots to `/config/perf.json` and support reflective recovery cycles.
@@ -81,7 +80,7 @@ Run `pre-commit run --all-files` and `ha dev addon lint` before pushing.
 
 ## Example headless container
 
-A sample Dockerfile and Helm chart live under `examples/obsidian-headless`. Build with `docker build -t obsidian-headless examples/obsidian-headless` and run `docker run --rm -p 6901:6901 obsidian-headless`.
+A sample Dockerfile and Helm chart live under `examples/obsidian-headless`. Build with `docker build -t obsidian-headless examples/obsidian-headless` and run `docker run --rm -p 8080:8080 obsidian-headless`.
 
 
 ---

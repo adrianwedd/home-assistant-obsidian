@@ -1,6 +1,6 @@
-## 🧠 Obsidian – Home Assistant Community Add-on | Pure Wrapper. Zero Bloat. Full GODMODE
+## 🧠 Obsidian – Home Assistant Community Add-on | Headless. Web-based. Full Control
 
-This add‑on wraps the official **linuxserver/obsidian** container, giving you a full desktop version of Obsidian accessible from the Home Assistant sidebar via Ingress.
+This add‑on wraps the **sytone/obsidian-remote** container, giving you a web-based version of Obsidian accessible from the Home Assistant sidebar via Ingress.
 
 It follows the "pure wrapper" philosophy – no Dockerfile here – so updates are instant and always track upstream.
 
@@ -10,8 +10,8 @@ It follows the "pure wrapper" philosophy – no Dockerfile here – so updates a
 
 |   |   |
 |---|---|
-| **Pure wrapper, zero build‑time** | Pulls the official multi‑arch `lscr.io/linuxserver/obsidian` image – installs in seconds and stays upstream‑fresh. |
-| **Ingress‑first UX** | Obsidian’s KasmVNC desktop appears in the HA sidebar – no extra ports or logins. |
+| **Pure wrapper, zero build‑time** | Pulls the official multi‑arch `ghcr.io/sytone/obsidian-remote` image – installs in seconds and stays upstream‑fresh. |
+| **Ingress‑first UX** | Obsidian’s web UI appears in the HA sidebar – no extra ports or logins. |
 | **Snapshot‑friendly** | Vault lives under `/data`; large browser caches are excluded from HA backups. |
 | **Minimal setup** | Only `PUID`, `PGID`, and `TZ` options – sensible defaults included. |
 | **Healthcheck & auto‑heal** | Supervisor monitors the UI and restarts automatically on failure. |
@@ -67,7 +67,7 @@ After editing, **Save** then **Restart** the add‑on for changes to take effect
 
 1. Start the add‑on, wait ≈ 30 s for first‑time initialisation.
 2. Click **Open Web UI** or the 🧠 Obsidian sidebar entry.
-3. In the VNC desktop choose **Create new vault** and point it to `/config/MyVault`.
+3. In the web UI, choose **Create new vault** and point it to `/config/MyVault`.
    `/config` inside the container maps to the add‑on’s persistent `/data` directory.
 
 ---
@@ -103,7 +103,7 @@ You can restore a snapshot on a new HA instance and your vault re‑appears inta
 |---------|-----|
 | Blank screen / reconnect loop | Clear browser site‑data or restart the add‑on. |
 | Vault not saved | Ensure you created it under `/config/…`; anything under `/home` vanishes on restart. |
-| Add‑on keeps restarting | Check Supervisor log – watchdog fires if port 3000 stops responding. |
+| Add‑on keeps restarting | Check Supervisor log – watchdog fires if port 8080 stops responding. |
 | `Failed to create gbm` in logs | `LIBGL_ALWAYS_SOFTWARE=1` is set by default; mount `/dev/dri` with the `video` group to enable passthrough. |
 
 ---
@@ -112,7 +112,7 @@ You can restore a snapshot on a new HA instance and your vault re‑appears inta
 
 | Version | Date | Notes |
 |---------|------|-------|
-| `1.5.12` | 2025‑06‑22 | Initial public release – pure wrapper, Ingress, multi‑arch. |
+| `1.5.13` | 2025‑07‑23 | Updated to headless sytone/obsidian-remote image. |
 
 ---
 

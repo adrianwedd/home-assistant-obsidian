@@ -1,6 +1,6 @@
-## 🧠 Obsidian – Home Assistant Add‑on | Pure Wrapper. Full Reflection
+## 🧠 Obsidian – Home Assistant Add‑on | Headless. Web-based. Full Control
 
-This add‑on wraps the official **linuxserver/obsidian** container, giving you a full desktop version of Obsidian accessible from the Home Assistant sidebar via Ingress.
+This add‑on wraps the **sytone/obsidian-remote** container, giving you a web-based version of Obsidian accessible from the Home Assistant sidebar via Ingress.
 
 ⧖ This container isn’t just an add-on—it’s your vault interface to structured knowledge under total local control. Built to be elegant, unbloated, and composable with your cognitive workflows.
 
@@ -24,7 +24,7 @@ After editing, **Save** then **Restart** the add‑on for changes to take effect
 
 1. Start the add‑on, wait ≈ 30 s for first‑time initialisation.
 2. Click **Open Web UI** (or the 🧠 sidebar icon to enter vaultspace).
-3. In the VNC desktop choose **Create new vault** and point it to `/config/MyVault`.
+3. In the web UI, choose **Create new vault** and point it to `/config/MyVault`.
    `/config` inside the container maps to the add‑on’s persistent `/data` directory.
 
 ---
@@ -59,7 +59,7 @@ GODMODE builds should log metrics to `/config/perf.json` for long-term vault per
 |---------|-----|
 | Blank screen / reconnect loop | Clear browser site‑data or restart the add‑on. |
 | Vault not saved | Ensure you created it under `/config/…`; anything under `/home` vanishes on restart. |
-| Add‑on keeps restarting | Check Supervisor log – watchdog fires if port 3000 stops responding. |
+| Add‑on keeps restarting | Check Supervisor log – watchdog fires if port 8080 stops responding. |
 
 ---
 
@@ -67,7 +67,7 @@ GODMODE builds should log metrics to `/config/perf.json` for long-term vault per
 
 | Version | Date | Notes |
 |---------|------|-------|
-| `1.5.12` | 2025‑06‑22 | Initial public release – pure wrapper, Ingress, multi‑arch. |
+| `1.5.13` | 2025‑07‑23 | Updated to headless sytone/obsidian-remote image. |
 
 ---
 

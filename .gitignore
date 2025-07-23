@@ -38,3 +38,7 @@ home-assistant_v2.db*
 screenshots/
 logs/
 *.log
+playwright_tests/screenshots/
+
+# Junk
+junk/
