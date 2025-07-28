@@ -9,12 +9,12 @@ arch:
   - armv7
   - armhf
 init: false
-image: ghcr.io/sytone/obsidian-remote:1.5.15
+image: ghcr.io/sytone/obsidian-remote
 tmpfs: true
 privileged:
   - SYS_ADMIN
 devices:
-  - /dev/dri:/dev/dri:rwm
+  - /dev/dri
 ingress: true
 ingress_port: 8080
 ingress_entry: "/"
