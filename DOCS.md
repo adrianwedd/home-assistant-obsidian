@@ -112,7 +112,7 @@ You can restore a snapshot on a new HA instance and your vault re‑appears inta
 
 | Version | Date | Notes |
 |---------|------|-------|
-| `1.6.0` | 2025‑07‑28 | Switched back to linuxserver/obsidian for better multi-arch support and stability. Fixed X server startup with required privileges. |
+| `v1.8.10-ls75` | 2025‑07‑28 | Switched back to linuxserver/obsidian for better multi-arch support and stability. Fixed X server startup with required privileges. Uses upstream Obsidian v1.8.10. |
 | `1.5.14` | 2025‑07‑23 | Updated to headless sytone/obsidian-remote image with `latest` tag. |
 
 ---
