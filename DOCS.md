@@ -1,6 +1,6 @@
 ## 🧠 Obsidian – Home Assistant Community Add-on | Headless. Web-based. Full Control
 
-This add‑on wraps the **sytone/obsidian-remote** container, giving you a web-based version of Obsidian accessible from the Home Assistant sidebar via Ingress.
+This add‑on wraps the **linuxserver/obsidian** container, giving you a full desktop version of Obsidian accessible from the Home Assistant sidebar via Ingress.
 
 It follows the "pure wrapper" philosophy – no Dockerfile here – so updates are instant and always track upstream.
 
@@ -10,8 +10,8 @@ It follows the "pure wrapper" philosophy – no Dockerfile here – so updates a
 
 |   |   |
 |---|---|
-| **Pure wrapper, zero build‑time** | Pulls the official multi‑arch `ghcr.io/sytone/obsidian-remote:latest` image – installs in seconds and stays upstream‑fresh. |
-| **Ingress‑first UX** | Obsidian’s web UI appears in the HA sidebar – no extra ports or logins. |
+| **Pure wrapper, zero build‑time** | Pulls the official multi‑arch `lscr.io/linuxserver/obsidian` image – installs in seconds and stays upstream‑fresh. |
+| **Ingress‑first UX** | Obsidian's KasmVNC desktop appears in the HA sidebar – no extra ports or logins. |
 | **Snapshot‑friendly** | Vault lives under `/data`; large browser caches are excluded from HA backups. |
 | **Minimal setup** | Only `PUID`, `PGID`, and `TZ` options – sensible defaults included. |
 | **Healthcheck & auto‑heal** | Supervisor monitors the UI and restarts automatically on failure. |
@@ -112,7 +112,7 @@ You can restore a snapshot on a new HA instance and your vault re‑appears inta
 
 | Version | Date | Notes |
 |---------|------|-------|
-| `0.1.1` | 2025‑07‑28 | Fixed container startup issues and version alignment - added required privileges for X server initialization. Uses upstream container v0.1.1. |
+| `1.6.0` | 2025‑07‑28 | Switched back to linuxserver/obsidian for better multi-arch support and stability. Fixed X server startup with required privileges. |
 | `1.5.14` | 2025‑07‑23 | Updated to headless sytone/obsidian-remote image with `latest` tag. |
 
 ---

@@ -6,7 +6,7 @@ import requests
 client = docker.from_env()
 print('Starting container...')
 container = client.containers.run(
-    'ghcr.io/sytone/obsidian-remote:latest',
+    'lscr.io/linuxserver/obsidian:latest',
     detach=True,
     ports={'3000/tcp': 3000},
 )

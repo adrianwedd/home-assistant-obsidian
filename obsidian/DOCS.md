@@ -1,6 +1,6 @@
 ## 🧠 Obsidian – Home Assistant Add‑on | Headless. Web-based. Full Control
 
-This add‑on wraps the **sytone/obsidian-remote** container, giving you a web-based version of Obsidian accessible from the Home Assistant sidebar via Ingress.
+This add‑on wraps the **linuxserver/obsidian** container, giving you a full desktop version of Obsidian accessible from the Home Assistant sidebar via Ingress.
 
 ⧖ This container isn’t just an add-on—it’s your vault interface to structured knowledge under total local control. Built to be elegant, unbloated, and composable with your cognitive workflows.
 
@@ -67,7 +67,7 @@ GODMODE builds should log metrics to `/config/perf.json` for long-term vault per
 
 | Version | Date | Notes |
 |---------|------|-------|
-| `0.1.1` | 2025‑07‑28 | Fixed container startup issues and version alignment - added required privileges for X server initialization. Uses upstream container v0.1.1. |
+| `1.6.0` | 2025‑07‑28 | Switched back to linuxserver/obsidian for better multi-arch support and stability. Fixed X server startup with required privileges. |
 | `1.5.14` | 2025‑07‑23 | Updated to headless sytone/obsidian-remote image with `latest` tag. |
 
 ---
