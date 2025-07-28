@@ -2,7 +2,7 @@
 Guidelines for AI (and human) contributors to **adrianwedd/home-assistant-obsidian**
 
 This repository hosts a **pure-wrapper Home Assistant add-on** that embeds the
-official `lscr.io/linuxserver/obsidian` container via Ingress.
+official `ghcr.io/sytone/obsidian-remote` container via Ingress.
 The project is managed by granular tasks in `.codex/tasks.yml`.
 Follow the rules below so automated tools, ChatGPT prompts, and human PRs all
 produce consistent, merge-ready work.
@@ -53,7 +53,7 @@ PRs must target `main`.
 |------|---------|-------|
 | **Addon-linter** (`frenck/action-addon-linter`) | Every push / PR | Validates `config.yaml`, icons, translations. |
 | **Release workflow** | Git tag `v*.*.*` | Bumps `version` in `config.yaml`, publishes GitHub Release. |
-| **Renovate** | Nightly | Opens PR when new linuxserver/obsidian tag appears. |
+| **Renovate** | Nightly | Opens PR when new ghcr.io/sytone/obsidian-remote tag appears. |
 
 Agents must **never** merge failing CI—but are encouraged to propose diagnostic improvements when failure patterns emerge.
 

@@ -13,7 +13,7 @@ The project has transitioned from `lscr.io/linuxserver/obsidian` to `ghcr.io/syt
 
 ### Container Differences
 
-| Aspect | linuxserver/obsidian | sytone/obsidian-remote |
+| Aspect | ghcr.io/sytone/obsidian-remote | sytone/obsidian-remote |
 |--------|---------------------|------------------------|
 | Port | 3000 | 8080 |
 | Data Path | `/config` | `/vaults` for vaults, `/config` for settings |
@@ -23,16 +23,16 @@ The project has transitioned from `lscr.io/linuxserver/obsidian` to `ghcr.io/syt
 ## Issues Identified
 
 ### 1. Documentation Inconsistencies
-Multiple files still reference the old `linuxserver/obsidian` container:
+Multiple files still reference the old `ghcr.io/sytone/obsidian-remote` container:
 
-- `CLAUDE.md:3` - Project overview still mentions `lscr.io/linuxserver/obsidian`
+- `CLAUDE.md:3` - Project overview still mentions `ghcr.io/sytone/obsidian-remote`
 - `CHANGELOG.md:3-4` - References linuxserver image tracking
-- `AGENTS.md:4` - References `lscr.io/linuxserver/obsidian`
+- `AGENTS.md:4` - References `ghcr.io/sytone/obsidian-remote`
 - `AGENTS.md:16` - Mentions renovate monitoring linuxserver tags
 - `R&D.md` - Extensive references throughout (multiple locations)
 
 ### 2. Test Configuration Issues
-- `tests/smoke_test.py:22` - Still attempts to run `lscr.io/linuxserver/obsidian:latest`
+- `tests/smoke_test.py:22` - Still attempts to run `ghcr.io/sytone/obsidian-remote:latest`
 - Test uses port 3000 instead of 8080
 
 ### 3. Runtime Script Compatibility

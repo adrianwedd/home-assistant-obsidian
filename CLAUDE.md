@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Home Assistant Community Add-on that wraps the `lscr.io/linuxserver/obsidian` container to provide Obsidian as an embedded web UI within Home Assistant. The add-on is designed as a pure wrapper without a Dockerfile, keeping it lightweight and always up-to-date with the upstream container.
+This is a Home Assistant Community Add-on that wraps the `ghcr.io/sytone/obsidian-remote` container to provide Obsidian as an embedded web UI within Home Assistant. The add-on is designed as a pure wrapper without a Dockerfile, keeping it lightweight and always up-to-date with the upstream container.
 
 ## Architecture
 

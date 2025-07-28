@@ -9,7 +9,7 @@ arch:
   - armv7
   - armhf
 init: false
-image: ghcr.io/sytone/obsidian-remote:latest
+image: ghcr.io/sytone/obsidian-remote:1.5.15
 tmpfs: true
 privileged:
   - SYS_ADMIN

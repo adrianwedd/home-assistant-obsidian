@@ -1,15 +1,15 @@
-# **Research and Development Plan: A Home Assistant Addon for linuxserver/obsidian**
+# **Research and Development Plan: A Home Assistant Addon for ghcr.io/sytone/obsidian-remote**
 
 ## **Introduction: Architecting a Professional Home Assistant Addon**
 
-This document presents a comprehensive research and development plan for the creation of a secure, stable, and seamlessly integrated Home Assistant addon for Obsidian. The primary objective is to wrap the official linuxserver/obsidian Docker image, making the powerful note-taking application a first-class citizen within the Home Assistant ecosystem. This plan moves beyond a simple proof-of-concept to architect a professional-grade addon suitable for widespread community use.
+This document presents a comprehensive research and development plan for the creation of a secure, stable, and seamlessly integrated Home Assistant addon for Obsidian. The primary objective is to wrap the official ghcr.io/sytone/obsidian-remote Docker image, making the powerful note-taking application a first-class citizen within the Home Assistant ecosystem. This plan moves beyond a simple proof-of-concept to architect a professional-grade addon suitable for widespread community use.
 
 The development process will be guided by a set of core architectural principles designed to maximize stability, usability, and long-term maintainability. These pillars ensure that the final product is not only functional but also robust, secure, and easy for both end-users and the developer to manage.
 
 ### **Architectural Pillars**
 
-* **The "Pure Wrapper" Philosophy:** The foundational strategy of this project is to avoid reinventing the wheel. Instead of attempting to build and maintain a complex Docker image containing Obsidian and its dependencies from scratch, this addon will function as a "pure wrapper." It will leverage the image key within the addon's configuration file to instruct the Home Assistant Supervisor to pull and run the official, pre-built linuxserver/obsidian image directly.\[1\] This approach confers several significant advantages: it drastically simplifies the development and build process, offloads the complex maintenance of the core application to the expert LinuxServer.io team, and guarantees that users of the addon will benefit from the same regular and timely application updates provided to the broader Docker community.\[3\]
-* **Ingress-First User Experience:** For a graphical user interface (GUI) application like Obsidian, which is delivered via the KasmVNC web interface in the linuxserver/obsidian image, a seamless user experience is paramount. Therefore, Home Assistant's Ingress feature will be treated as a core, non-negotiable requirement. Ingress allows the addon's web UI to be embedded directly within the Home Assistant interface, inheriting its authentication and secure remote access capabilities.\[4\] This eliminates the need for users to manually configure port forwarding, manage separate logins, or expose additional services to the internet, resulting in a more professional, secure, and user-friendly product.\[6\]
+* **The "Pure Wrapper" Philosophy:** The foundational strategy of this project is to avoid reinventing the wheel. Instead of attempting to build and maintain a complex Docker image containing Obsidian and its dependencies from scratch, this addon will function as a "pure wrapper." It will leverage the image key within the addon's configuration file to instruct the Home Assistant Supervisor to pull and run the official, pre-built ghcr.io/sytone/obsidian-remote image directly.\[1\] This approach confers several significant advantages: it drastically simplifies the development and build process, offloads the complex maintenance of the core application to the expert LinuxServer.io team, and guarantees that users of the addon will benefit from the same regular and timely application updates provided to the broader Docker community.\[3\]
+* **Ingress-First User Experience:** For a graphical user interface (GUI) application like Obsidian, which is delivered via the KasmVNC web interface in the ghcr.io/sytone/obsidian-remote image, a seamless user experience is paramount. Therefore, Home Assistant's Ingress feature will be treated as a core, non-negotiable requirement. Ingress allows the addon's web UI to be embedded directly within the Home Assistant interface, inheriting its authentication and secure remote access capabilities.\[4\] This eliminates the need for users to manually configure port forwarding, manage separate logins, or expose additional services to the internet, resulting in a more professional, secure, and user-friendly product.\[6\]
 * **Configuration as Code:** All user-configurable parameters will be managed declaratively through the addon's config.yaml file. This file will feature a robust and clearly defined schema, which enables Home Assistant to automatically generate a user-friendly configuration panel in the UI.\[1\] This approach provides users with input validation, clear descriptions for each option, and a consistent configuration experience, while ensuring the addon receives predictable and correctly formatted data.\[1\]
 * **Automation-Driven Quality:** A commitment to modern software development practices is essential for a high-quality product. This plan incorporates a fully automated Continuous Integration and Continuous Deployment (CI/CD) pipeline using GitHub Actions. This pipeline will be responsible for automatically linting code against best practices, running validation checks, and managing the release process. This automation ensures high-quality, repeatable builds and significantly reduces the potential for human error.
 
@@ -17,11 +17,11 @@ The development process will be guided by a set of core architectural principles
 
 Before any code is written, a thorough analysis of the project's components is required. This phase is dedicated to deconstructing the target Docker image to understand its operational needs and establishing a professional, repeatable development workflow that will serve as the foundation for the entire project.
 
-### **1.1. Deconstruction of the linuxserver/obsidian Docker Image**
+### **1.1. Deconstruction of the ghcr.io/sytone/obsidian-remote Docker Image**
 
-The first step is to fully understand the behavior and requirements of the linuxserver/obsidian Docker image. This analysis will directly inform the entire addon configuration, ensuring that all necessary parameters are correctly exposed and managed.
+The first step is to fully understand the behavior and requirements of the ghcr.io/sytone/obsidian-remote Docker image. This analysis will directly inform the entire addon configuration, ensuring that all necessary parameters are correctly exposed and managed.
 
-The linuxserver/obsidian container is based on the Docker Baseimage KasmVNC.\[7\] This is a critical piece of information, as it reveals that the image provides a full Linux desktop environment, including the Obsidian application, which is then streamed to the user's web browser. This KasmVNC foundation is what makes the Ingress-first approach the ideal method for integration.
+The ghcr.io/sytone/obsidian-remote container is based on the Docker Baseimage KasmVNC.\[7\] This is a critical piece of information, as it reveals that the image provides a full Linux desktop environment, including the Obsidian application, which is then streamed to the user's web browser. This KasmVNC foundation is what makes the Ingress-first approach the ideal method for integration.
 
 A detailed review of the official Docker Hub page and the LinuxServer.io documentation reveals several core operational parameters that the addon must accommodate.
 
@@ -100,9 +100,9 @@ The first step is to give the addon a clear and professional identity.\[5\]
 
 To implement the "pure wrapper" philosophy, the image key is used.\[5\]
 
-The implementation will be: image: "lscr.io/linuxserver/obsidian:{version}".
+The implementation will be: image: "ghcr.io/sytone/obsidian-remote:{version}".
 
-* **Multi-Architecture Manifests:** The linuxserver/obsidian image uses multi-arch manifests, so the {arch} placeholder is not required in the image string.\[7\]
+* **Multi-Architecture Manifests:** The ghcr.io/sytone/obsidian-remote image uses multi-arch manifests, so the {arch} placeholder is not required in the image string.\[7\]
 * **Version and Tag Coupling:** The addon's version must exactly match the Docker image tag specified in the image key.\[5\]
 * **Automated Updates:** A tool like Renovate is recommended to monitor for new tags and open a pull request that bumps both the image tag and the corresponding version in config.yaml.
 
@@ -203,7 +203,7 @@ A Dockerfile is **not required and should be omitted** as the Supervisor ignores
 
 ## **Conclusion and Future Development**
 
-This plan outlines a professional methodology for creating a stable, secure, and maintainable Home Assistant addon for linuxserver/obsidian.
+This plan outlines a professional methodology for creating a stable, secure, and maintainable Home Assistant addon for ghcr.io/sytone/obsidian-remote.
 
 ### **Future Development Backlog**
 
@@ -219,7 +219,7 @@ This plan outlines a professional methodology for creating a stable, secure, and
 4. Introducing Hass.io Ingress \- Home Assistant, accessed on June 22, 2025, [https://www.home-assistant.io/blog/2019/04/15/hassio-ingress/](https://www.home-assistant.io/blog/2019/04/15/hassio-ingress/)
 5. Add-on configuration | Home Assistant Developer Docs, accessed on June 22, 2025, [https://developers.home-assistant.io/docs/add-ons/configuration/](https://developers.home-assistant.io/docs/add-ons/configuration/)
 6. Presenting your addon | Home Assistant Developer Docs, accessed on June 22, 2025, [https://developers.home-assistant.io/docs/add-ons/presentation/](https://developers.home-assistant.io/docs/add-ons/presentation/)
-7. linuxserver/obsidian \- Docker Image, accessed on June 22, 2025, [https://hub.docker.com/r/linuxserver/obsidian](https://hub.docker.com/r/linuxserver/obsidian)
+7. ghcr.io/sytone/obsidian-remote \- Docker Image, accessed on June 22, 2025, [https://github.com/sytone/obsidian-remote](https://github.com/sytone/obsidian-remote)
 8.
    3. Home Assistant Addon — SunFounder Pironman documentation, accessed on June 22, 2025, [https://docs.sunfounder.com/projects/pironman-u1/en/latest/home\_assistant/ha\_addon.html](https://docs.sunfounder.com/projects/pironman-u1/en/latest/home_assistant/ha_addon.html)
 9. Add-on configuration | Home Assistant Developer Docs, accessed on June 22, 2025, [https://developers.home-assistant.io/docs/add-ons/configuration/](https://developers.home-assistant.io/docs/add-ons/configuration/)
