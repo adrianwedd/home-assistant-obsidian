@@ -67,6 +67,7 @@ GODMODE builds should log metrics to `/config/perf.json` for long-term vault per
 
 | Version | Date | Notes |
 |---------|------|-------|
+| `1.5.15` | 2025‑07‑28 | Fixed container startup issues - added required privileges for X server initialization. |
 | `1.5.14` | 2025‑07‑23 | Updated to headless sytone/obsidian-remote image with `latest` tag. |
 
 ---
