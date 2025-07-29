@@ -1,5 +1,5 @@
 name: Obsidian
-version: "latest"
+version: "1.5.17"
 slug: obsidian
 description: A secure, self-hosted digital brain with Home Assistant integration.
 url: https://github.com/adrianwedd/home-assistant-obsidian/tree/main/obsidian
@@ -8,7 +8,7 @@ arch:
   - amd64
   - armv7
   - armhf
-init: true
+init: false
 image: lscr.io/linuxserver/obsidian
 full_access: true
 ingress: true
