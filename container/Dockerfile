@@ -68,24 +68,24 @@ RUN wget -O Obsidian.AppImage "https://github.com/obsidianmd/obsidian-releases/r
     chmod +x Obsidian.AppImage
 
 # Configure NGINX for web interface
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY container/nginx.conf /etc/nginx/nginx.conf
 
 # Create startup script and copy ASCII art files
-COPY start.sh /opt/obsidian/scripts/start.sh
+COPY container/start.sh /opt/obsidian/scripts/start.sh
 COPY ../obsidian/obsidian-logo.txt /opt/obsidian/obsidian-logo.txt
 COPY ../obsidian/hass-obsidian-ascii-art.txt /opt/obsidian/hass-obsidian-ascii-art.txt
 RUN chmod +x /opt/obsidian/scripts/start.sh
 
 # Create health check script
-COPY health-check.sh /opt/obsidian/scripts/health-check.sh
+COPY container/health-check.sh /opt/obsidian/scripts/health-check.sh
 RUN chmod +x /opt/obsidian/scripts/health-check.sh
 
-# Set up VNC configuration  
+# Set up VNC configuration
 RUN mkdir -p /home/obsidian/.vnc
 
 # Configure Openbox window manager
 RUN mkdir -p /home/obsidian/.config/openbox
-COPY openbox-rc.xml /home/obsidian/.config/openbox/rc.xml
+COPY container/openbox-rc.xml /home/obsidian/.config/openbox/rc.xml
 
 # Set ownership of home directory
 RUN chown -R obsidian:obsidian /home/obsidian /opt/obsidian
