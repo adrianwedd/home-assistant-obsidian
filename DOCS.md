@@ -1,6 +1,6 @@
 # 🧠 Obsidian Add-on Documentation
 
-**Complete guide to running Obsidian inside Home Assistant**
+## Complete guide to running Obsidian inside Home Assistant
 
 This add-on provides the full Obsidian desktop experience directly in your Home Assistant sidebar. Built on the proven `lscr.io/linuxserver/obsidian` container, it delivers enterprise-grade note-taking with zero configuration complexity.
 
@@ -11,12 +11,12 @@ This add-on provides the full Obsidian desktop experience directly in your Home 
 ## 📋 Table of Contents
 
 1. [Quick Start Guide](#-quick-start-guide)
-2. [Configuration Options](#-configuration-options)
+2. [Configuration Options](#️-configuration-options)
 3. [Creating & Managing Vaults](#-creating--managing-vaults)
 4. [Data Management & Backups](#-data-management--backups)
 5. [Performance Optimization](#-performance-optimization)
 6. [Troubleshooting Guide](#-troubleshooting-guide)
-7. [Advanced Features](#-advanced-features)
+7. [Advanced Features](#️-advanced-features)
 8. [Security Considerations](#-security-considerations)
 9. [Integration Tips](#-integration-tips)
 10. [Version History](#-version-history)
@@ -117,7 +117,8 @@ tz: "America/New_York"
 ### Vault Organization Strategies
 
 #### Single Large Vault
-```
+
+```text
 /config/MainVault/
 ├── 01-Inbox/           # Quick capture
 ├── 02-Home-Assistant/  # HA documentation
@@ -128,7 +129,8 @@ tz: "America/New_York"
 ```
 
 #### Multiple Specialized Vaults
-```
+
+```text
 /config/
 ├── HomeAssistant/      # HA configs & automations
 ├── DeviceManuals/      # Equipment documentation
@@ -199,12 +201,14 @@ automation:
    - Create regular ZIP archives
 
 2. **SFTP/SSH Method**
+
    ```bash
    # From external machine
    scp -r root@homeassistant.local:/config/MyVault/ ./backups/
    ```
 
 3. **Git Version Control**
+
    ```bash
    # Inside your vault directory
    git init
@@ -253,7 +257,7 @@ automation:
 
 #### Resource Usage Patterns
 
-```
+```text
 Typical RAM Usage:
 ├── Container Base: ~200MB
 ├── Obsidian App: ~300-400MB
@@ -308,6 +312,7 @@ Total: 650-900MB for normal usage
    - Enable real-time collaboration features
 
 2. **Increase Resource Limits** (Advanced)
+
    ```yaml
    # In Home Assistant configuration.yaml
    homeassistant:
@@ -350,9 +355,9 @@ Total: 650-900MB for normal usage
 
 #### 🖥️ Interface Problems
 
-**Blank/Black Screen**
+#### Blank/Black Screen
 
-```
+```text
 Symptoms: Obsidian loads but shows empty screen
 Causes: Browser cache, X server issues, resource constraints
 
@@ -364,9 +369,9 @@ Solutions:
 5. Check available system RAM
 ```
 
-**Tiny/Oversized Interface**
+#### Tiny/Oversized Interface
 
-```
+```text
 Symptoms: UI elements too small or large
 Causes: Browser zoom, display scaling, theme issues
 
@@ -377,9 +382,9 @@ Solutions:
 4. Disable custom CSS themes temporarily
 ```
 
-**Constant Reconnection**
+#### Constant Reconnection
 
-```
+```text
 Symptoms: "Reconnecting..." message appears frequently
 Causes: Network issues, resource exhaustion, container restarts
 
@@ -392,9 +397,9 @@ Solutions:
 
 #### 📁 Data & Vault Issues
 
-**Vault Not Found/Missing**
+#### Vault Not Found/Missing
 
-```
+```text
 Symptoms: Vault disappears after restart
 Causes: Incorrect vault path, storage issues
 
@@ -405,9 +410,9 @@ Solutions:
 4. Restore from Home Assistant backup if needed
 ```
 
-**Permission Errors**
+#### Permission Errors
 
-```
+```text
 Symptoms: Cannot save files, "Permission denied" errors
 Causes: Incorrect PUID/PGID settings
 
@@ -418,9 +423,9 @@ Solutions:
 4. Use default values (1000/1000) if unsure
 ```
 
-**Sync Conflicts**
+#### Sync Conflicts
 
-```
+```text
 Symptoms: Duplicate files, merge conflicts
 Causes: Multiple Obsidian instances, external sync
 
@@ -433,9 +438,9 @@ Solutions:
 
 #### 🔄 Performance Issues
 
-**Slow Loading**
+#### Slow Loading
 
-```
+```text
 Symptoms: Pages take >10 seconds to load
 Causes: Large vaults, many plugins, insufficient resources
 
@@ -447,9 +452,9 @@ Solutions:
 5. Check for corrupted cache files
 ```
 
-**High Resource Usage**
+#### High Resource Usage
 
-```
+```text
 Symptoms: System becomes sluggish, high CPU/RAM
 Causes: Memory leaks, runaway plugins, large media files
 
@@ -581,6 +586,7 @@ docker stats addon_local_obsidian
 #### Note Templates for HA
 
 **Device Documentation Template:**
+
 ```markdown
 # {{title}}
 
@@ -595,7 +601,7 @@ docker stats addon_local_obsidian
 ```yaml
 # Home Assistant configuration
 
-```
+```text
 
 ## Troubleshooting
 - [ ] Power cycle device
@@ -699,6 +705,7 @@ docker stats addon_local_obsidian
 - Monitor access logs regularly
 
 **Network Security:**
+
 ```yaml
 # Example firewall rule (iptables)
 # Block direct container access
@@ -760,6 +767,7 @@ iptables -A INPUT -s 172.30.0.0/16 -p tcp --dport 3000 -j ACCEPT
 #### Documenting Your Smart Home
 
 **Configuration Management:**
+
 ```markdown
 # Device Registry in Obsidian
 ## Living Room
@@ -774,6 +782,7 @@ iptables -A INPUT -s 172.30.0.0/16 -p tcp --dport 3000 -j ACCEPT
 ```
 
 **Automation Documentation:**
+
 ```markdown
 # Morning Routine Automation
 

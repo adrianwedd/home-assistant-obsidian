@@ -56,7 +56,7 @@
 1. Navigate to **Settings** → **Add-ons** → **Add-on Store**
 2. Click the **⋮** menu (top right) → **Repositories**
 3. Add this URL:
-   ```
+   ```text
    https://github.com/adrianwedd/home-assistant-obsidian
    ```
 4. Click **Add** and wait for the repository to load
@@ -81,6 +81,7 @@ Most users can skip this step—the defaults work perfectly for standard setups.
 | `tz` | `UTC` | Timezone for timestamps | Set to your local timezone (e.g., `America/New_York`) |
 
 **Finding your IDs (Linux/macOS users):**
+
 ```bash
 id -u  # Shows your user ID
 id -g  # Shows your group ID
@@ -209,6 +210,7 @@ code .
 ### Quality Standards
 
 **Before submitting PRs:**
+
 ```bash
 # Run linting
 ha dev addon lint
@@ -237,13 +239,13 @@ This add-on follows the "pure wrapper" philosophy:
 
 ### 🎯 Upcoming Releases
 
-**v1.9.x - Enhanced Performance**
+#### v1.9.x - Enhanced Performance
 - [ ] GPU acceleration toggle for supported hardware
 - [ ] Configurable resolution and quality settings
 - [ ] Advanced networking options
 - [ ] Custom plugin management
 
-**v2.0.x - Enterprise Features**
+#### v2.0.x - Enterprise Features
 - [ ] Multi-user vault support
 - [ ] Integration with Home Assistant entities
 - [ ] Automated backup scheduling
@@ -251,12 +253,12 @@ This add-on follows the "pure wrapper" philosophy:
 
 ### 🛣️ Long-term Vision
 
-**Smart Home Integration**
+#### Smart Home Integration
 - Connect Obsidian with Home Assistant sensors and automations
 - Voice-activated note taking via speech-to-text
 - Automatic documentation generation from HA configs
 
-**Community Ecosystem**
+#### Community Ecosystem
 - Plugin marketplace integration
 - Shared community templates
 - Advanced collaboration features
@@ -268,9 +270,9 @@ This add-on follows the "pure wrapper" philosophy:
 ## 🎉 Success Stories
 
 > "Transformed my Home Assistant setup into a complete home management system. Now I track everything from device manuals to grocery lists in one place." —*@smartHome_enthusiast*
-
+>
 > "Finally, a note-taking solution that doesn't require juggling multiple apps. Perfect for documenting automation scripts." —*@HA_developer*
-
+>
 > "The seamless sidebar integration makes this feel like a native HA feature. Brilliant execution." —*@community_moderator*
 
 ## 🙏 Acknowledgments
