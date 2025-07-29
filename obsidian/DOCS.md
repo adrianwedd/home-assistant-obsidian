@@ -10,11 +10,11 @@ This add‑on wraps the **linuxserver/obsidian** container, giving you a full de
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| `puid` | int | `1000` | Linux user‑ID that owns files inside the vault. |
-| `pgid` | int | `1000` | Linux group‑ID that owns files. |
+| `puid` | int | `911` | Linux user‑ID that owns files inside the vault. **⚠️ Keep as 911 for LinuxServer.io compatibility.** |
+| `pgid` | int | `911` | Linux group‑ID that owns files. **⚠️ Keep as 911 for proper container operation.** |
 | `tz`   | str | `UTC`  | Time‑zone string (e.g. `Australia/Sydney`). |
 
-> On most Linux hosts run `id -u` and `id -g` to discover your UID/GID.
+> **Important:** The default UID/GID 911 is LinuxServer.io's standard for containerized applications. Only change if you have specific permission requirements.
 
 After editing, **Save** then **Restart** the add‑on for changes to take effect.
 
@@ -67,6 +67,7 @@ GODMODE builds should log metrics to `/config/perf.json` for long-term vault per
 
 | Version | Date | Notes |
 |---------|------|-------|
+| `v1.8.10-ls73` | 2025‑07‑29 | **Major graphics stability update:** Fixed X server initialization, added SYS_ADMIN capability, implemented tmpfs mount, standardized to UID/GID 911. Resolved "Failed to create gbm" and mount permission errors. |
 | `v1.8.10-ls75` | 2025‑07‑28 | Switched back to linuxserver/obsidian for better multi-arch support and stability. Fixed X server startup with required privileges. Uses upstream Obsidian v1.8.10. |
 | `1.5.14` | 2025‑07‑23 | Updated to headless sytone/obsidian-remote image with `latest` tag. |
 

@@ -1,5 +1,5 @@
 name: Obsidian
-version: "v1.8.10-ls73"
+version: "v1.8.10-ls72"
 slug: obsidian
 description: A secure, self-hosted digital brain with Home Assistant integration.
 url: https://github.com/adrianwedd/home-assistant-obsidian/tree/main/obsidian
@@ -11,6 +11,14 @@ arch:
 init: false
 image: lscr.io/linuxserver/obsidian
 full_access: true
+privileged: true
+capabilities:
+  - SYS_ADMIN
+  - SYS_CHROOT
+  - MKNOD
+tmpfs:
+  - /tmp:rw,noexec,nosuid,size=1g
+  - /sys/kernel/security:rw,noexec,nosuid,size=100m
 environment:
   LIBGL_ALWAYS_SOFTWARE: "1"
   DISPLAY: ":1"
@@ -25,10 +33,10 @@ backup_exclude:
   - BrowserCache/
   - .cache/
 options:
-  puid: 1000
-  pgid: 1000
+  puid: 911
+  pgid: 911
   tz: UTC
 schema:
-  puid: int
-  pgid: int
+  puid: int(1,65534)?
+  pgid: int(1,65534)?
   tz: str

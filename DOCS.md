@@ -63,16 +63,16 @@ The add-on works perfectly with default settings for most users. Only modify the
 
 | Setting | Default | Purpose | Example |
 |---------|---------|---------|----------|
-| `puid` | `1000` | User ID for file ownership | `1000` (find with `id -u`) |
-| `pgid` | `1000` | Group ID for file ownership | `1000` (find with `id -g`) |
+| `puid` | `911` | User ID for file ownership (LinuxServer.io standard) | **⚠️ Keep as 911** (find with `id -u`) |
+| `pgid` | `911` | Group ID for file ownership (LinuxServer.io standard) | **⚠️ Keep as 911** (find with `id -g`) |
 | `tz` | `UTC` | Timezone for timestamps | `America/New_York`, `Europe/London` |
 
 ### When to Change Settings
 
 **User/Group IDs (`puid`/`pgid`):**
-- ✅ Keep defaults unless you have file permission issues
-- ⚠️ Change only if running Home Assistant with custom user accounts
-- 🔧 Linux users: run `id -u` and `id -g` to find your IDs
+- ✅ **Critical:** Keep as 911 (LinuxServer.io standard) for proper container operation
+- ⚠️ Only change if you have specific permission requirements with custom HA setups
+- 🔧 Advanced users: run `id -u` and `id -g` if custom IDs are absolutely necessary
 
 **Timezone (`tz`):**
 - ✅ Set to your local timezone for accurate timestamps
@@ -83,8 +83,8 @@ The add-on works perfectly with default settings for most users. Only modify the
 
 ```yaml
 # Example configuration for Eastern Time user
-puid: 1000
-pgid: 1000
+puid: 911    # LinuxServer.io standard - DO NOT CHANGE
+pgid: 911    # LinuxServer.io standard - DO NOT CHANGE
 tz: "America/New_York"
 ```
 
@@ -853,26 +853,27 @@ automation:
 
 ## 📈 Version History
 
-### Current Release: v1.8.10-ls75 (2025-07-28)
+### Current Release: v1.8.10-ls73 (2025-07-29)
 
-**🎯 Major Improvements:**
-- Switched to `lscr.io/linuxserver/obsidian` for enhanced stability
-- Fixed X server startup issues with proper privilege configuration
-- Added multi-architecture support (amd64, aarch64, armv7, armhf)
-- Improved container health monitoring
-- Enhanced backup integration with HA snapshots
+**🎯 Major Graphics Environment Improvements:**
+- **Fixed X server initialization errors** that caused blank screens and container crashes
+- **Added essential graphics environment variables** (`LIBGL_ALWAYS_SOFTWARE`, `DISPLAY`, `XVFB_WHD`)
+- **Enhanced container security & stability** with proper capability management
+- **Standardized to LinuxServer.io UID/GID 911** for optimal file permissions
+- **Resolved mount permission errors** that were causing warning messages
 
 **🔧 Technical Changes:**
-- Required `SYS_ADMIN` privilege for X server initialization
-- Added `/dev/dri` device access for hardware acceleration
-- Updated ingress configuration for better performance
-- Optimized cache exclusions for smaller backups
+- **Added `SYS_ADMIN` capability** for proper mount operations and AppArmor compatibility
+- **Implemented tmpfs mount** for `/tmp` with security flags (`rw,noexec,nosuid,size=1g`)
+- **Updated configuration schema** with proper UID/GID validation ranges
+- **Enhanced documentation** with critical security and configuration information
 
 **🐛 Bug Fixes:**
-- Resolved "Failed to create gbm" X server errors
-- Fixed container restart loops on resource-constrained systems
-- Corrected file permission issues with default PUID/PGID
-- Improved startup reliability on ARM64 systems
+- Fixed "Failed to create gbm" errors during container startup
+- Resolved X11 socket permission issues (`/tmp/.X11-unix` ownership)
+- Eliminated recurring AppArmor detection warnings
+- Corrected modprobe missing errors for kernel module access
+- **Improved startup reliability** with proper graphics stack initialization
 
 ### Previous Releases
 

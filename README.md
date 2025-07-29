@@ -76,8 +76,8 @@ Most users can skip this step—the defaults work perfectly for standard setups.
 
 | Setting | Default | Description | When to Change |
 |---------|---------|-------------|----------------|
-| `puid` | `1000` | User ID for file ownership | If you're using a custom user setup |
-| `pgid` | `1000` | Group ID for file ownership | If you have specific permission requirements |
+| `puid` | `911` | User ID for file ownership (LinuxServer.io standard) | ⚠️ **Critical:** Keep as `911` unless you have specific permission needs |
+| `pgid` | `911` | Group ID for file ownership (LinuxServer.io standard) | ⚠️ **Critical:** Keep as `911` for proper container operation |
 | `tz` | `UTC` | Timezone for timestamps | Set to your local timezone (e.g., `America/New_York`) |
 
 **Finding your IDs (Linux/macOS users):**
@@ -116,13 +116,13 @@ You're now running a full Obsidian desktop environment! Create notes, build know
 
 ### Security Features
 
-✅ **Unprivileged execution** – no root access required
+✅ **Controlled execution** – runs as dedicated user (UID/GID 911)
 ✅ **Minimal attack surface** – only essential ports exposed
 ✅ **Automatic updates** – security patches applied regularly
 ✅ **Network isolation** – contained within Home Assistant's network stack
 ✅ **File system isolation** – vault data protected in dedicated volumes
 
-> 🛡️ **Security Note:** This add-on requires `SYS_ADMIN` privileges and `/dev/dri` access only for X server initialization. No network privileges or system modifications are made.
+> 🛡️ **Security Note:** This add-on requires `SYS_ADMIN` capability for proper graphics initialization and uses LinuxServer.io's standard user (911:911) for secure file operations. All processes run unprivileged within the container.
 
 ---
 
