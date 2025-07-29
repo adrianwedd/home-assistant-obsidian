@@ -43,3 +43,6 @@ playwright_tests/screenshots/
 # Junk
 junk/
 2025-07-28-i-think-were-halfway-through-a-change-to-a-differ.txt
+
+# Node.js artifacts
+node_modules/

@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD036 MD033 -->
 # 🌌 *The Obsidian Codex*
 *Where Knowledge Architecture Meets Digital Consciousness*
 
@@ -150,3 +151,4 @@ GODMODE builds should log metrics to `/config/perf.json` for long-term vault per
 Questions or feedback? [Open an issue on GitHub](https://github.com/adrianwedd/home-assistant-obsidian/issues) or join the discussion in the [Home Assistant Community](https://community.home-assistant.io/).
 
 ⧖ Reflect often. Write freely. Fork bravely.
+<!-- markdownlint-enable MD036 MD033 -->

@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD040 MD031 MD026 -->
 # Repository Registration Debug
 
 ## Issue
@@ -7,7 +8,8 @@ The Home Assistant repository `https://github.com/adrianwedd/home-assistant-obsi
 
 ### 1. Repository Structure Issues
 **Check**: Repository must have this exact structure:
-```
+
+```text
 /
 ├── repository.yaml          ← Must exist at root
 └── obsidian/               ← Add-on folder
@@ -20,6 +22,7 @@ The Home Assistant repository `https://github.com/adrianwedd/home-assistant-obsi
 
 ### 2. repository.yaml Format Issues
 **Current content**:
+
 ```yaml
 name: "Obsidian Home Assistant Addon"
 url: "https://github.com/adrianwedd/home-assistant-obsidian"
@@ -27,6 +30,8 @@ maintainer: "Adrian Wedd <adrian@adrianwedd.com>"
 icon: "https://github.com/adrianwedd/home-assistant-obsidian/blob/main/obsidian/icon.png?raw=true"
 logo: "https://github.com/adrianwedd/home-assistant-obsidian/blob/main/obsidian/logo.png?raw=true"
 ```
+
+
 
 **Potential Issues**:
 - Missing trailing newline
@@ -50,6 +55,7 @@ logo: "https://github.com/adrianwedd/home-assistant-obsidian/blob/main/obsidian/
 ### 5. Validation Tools
 
 **Test repository validity**:
+
 ```bash
 # Check YAML syntax
 python -c "import yaml; yaml.safe_load(open('repository.yaml'))"
@@ -75,6 +81,7 @@ curl -I "https://github.com/adrianwedd/home-assistant-obsidian/blob/main/obsidia
 
 ### Step 3: Manual Validation
 Run these commands to validate:
+
 ```bash
 # Test YAML parsing
 python3 -c "
@@ -98,6 +105,7 @@ except Exception as e:
 ```
 
 ### Step 4: Test Icon/Logo URLs
+
 ```bash
 curl -I "https://github.com/adrianwedd/home-assistant-obsidian/blob/main/obsidian/icon.png?raw=true"
 curl -I "https://github.com/adrianwedd/home-assistant-obsidian/blob/main/obsidian/logo.png?raw=true"
@@ -107,6 +115,7 @@ curl -I "https://github.com/adrianwedd/home-assistant-obsidian/blob/main/obsidia
 
 ### Fix 1: Add Proper Newlines
 Ensure files end with newlines:
+
 ```bash
 echo "" >> repository.yaml
 echo "" >> obsidian/config.yaml
@@ -114,6 +123,7 @@ echo "" >> obsidian/config.yaml
 
 ### Fix 2: Simplify repository.yaml
 Try minimal version:
+
 ```yaml
 name: "Obsidian Home Assistant Addon"
 url: "https://github.com/adrianwedd/home-assistant-obsidian"
@@ -122,6 +132,7 @@ maintainer: "Adrian Wedd <adrian@adrianwedd.com>"
 
 ### Fix 3: Check Branch Names
 Ensure using `main` branch, not `master`:
+
 ```bash
 git branch -M main
 git push origin main
@@ -139,3 +150,4 @@ In Home Assistant:
 2. Check Home Assistant logs for specific errors
 3. Try simplified repository.yaml
 4. Test with fresh Home Assistant restart
+<!-- markdownlint-enable MD040 MD031 MD026 -->

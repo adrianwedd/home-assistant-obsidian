@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD040 MD031 MD026 -->
 # Custom Obsidian Container Design
 
 ## Architecture Overview
@@ -6,7 +7,7 @@ We'll create a purpose-built container that runs Obsidian in a web environment o
 
 ## Container Stack
 
-```
+```text
 ┌─────────────────────────────────────┐
 │ Home Assistant Ingress (Port 3000) │
 ├─────────────────────────────────────┤
@@ -45,9 +46,11 @@ We'll create a purpose-built container that runs Obsidian in a web environment o
 ## Technical Specifications
 
 ### Base Image
+
 ```dockerfile
 FROM ubuntu:22.04
 ```
+
 **Why Ubuntu 22.04:**
 - Long-term support (LTS)
 - Well-tested package ecosystem
@@ -55,6 +58,7 @@ FROM ubuntu:22.04
 - Smaller than full desktop images
 
 ### Display System
+
 ```dockerfile
 # Virtual display for headless operation
 RUN apt-get install -y xvfb
@@ -64,6 +68,7 @@ RUN apt-get install -y kasmvnc
 ```
 
 ### Obsidian Installation
+
 ```dockerfile
 # Download and install Obsidian AppImage
 RUN wget https://github.com/obsidianmd/obsidian-releases/releases/download/v1.8.10/Obsidian-1.8.10.AppImage
@@ -71,6 +76,7 @@ RUN chmod +x Obsidian-1.8.10.AppImage
 ```
 
 ### Web Interface
+
 ```dockerfile
 # NGINX for reverse proxy and static files
 RUN apt-get install -y nginx
@@ -81,7 +87,8 @@ COPY nginx.conf /etc/nginx/nginx.conf
 
 ## Container Structure
 
-```
+```text
+```text
 /opt/obsidian/
 ├── app/
 │   ├── Obsidian.AppImage           # Main application
@@ -91,6 +98,7 @@ COPY nginx.conf /etc/nginx/nginx.conf
 └── scripts/
     ├── health-check.sh             # Health monitoring
     └── init-vault.sh               # Vault initialization
+```
 ```
 
 ## Environment Variables
@@ -116,21 +124,25 @@ VNC_PORT=6901
 ## Startup Process
 
 1. **Initialize Display**
+
    ```bash
    Xvfb :1 -screen 0 1920x1080x24 &
    ```
 
 2. **Start VNC Server**
+
    ```bash
    kasmvnc :1 -geometry 1920x1080 -depth 24 &
    ```
 
 3. **Configure NGINX**
+
    ```bash
    nginx -g "daemon off;" &
    ```
 
 4. **Launch Obsidian**
+
    ```bash
    DISPLAY=:1 ./Obsidian.AppImage --no-sandbox
    ```
@@ -155,6 +167,7 @@ VNC_PORT=6901
 ## Build Pipeline
 
 ### GitHub Actions Workflow
+
 ```yaml
 name: Build Custom Obsidian Container
 
@@ -233,3 +246,4 @@ jobs:
 - **Week 4:** Documentation and beta release
 
 This approach eliminates the architectural conflicts we've been fighting and gives us a clean, maintainable solution specifically designed for Home Assistant's environment.
+<!-- markdownlint-enable MD040 MD031 MD026 -->

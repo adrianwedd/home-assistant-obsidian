@@ -1,10 +1,11 @@
+<!-- markdownlint-disable MD040 MD031 MD026 -->
 # Mount Error Troubleshooting History
 
 ## Problem Statement
 
 The Obsidian Home Assistant add-on has been experiencing persistent mount errors that cause container instability:
 
-```
+```text
 mount: /sys/kernel/security: cannot mount none read-only.
 mount: /tmp: cannot mount none read-only.
 Could not mount /sys/kernel/security.
@@ -63,7 +64,6 @@ These errors loop continuously and indicate the container is trying to mount sys
 
 ## Current Configuration State
 
-### Latest config.yaml (v1.8.10-ls72):
 ```yaml
 name: Obsidian
 version: "v1.8.10-ls72"
@@ -149,3 +149,4 @@ We've systematically addressed:
 - ✅ Basic functionality requirements
 
 The remaining mount errors appear to be architectural conflicts between the LinuxServer.io container design and Home Assistant's security model. Further investigation is needed to determine if these are cosmetic warnings or indicate deeper functionality issues.
+<!-- markdownlint-enable MD040 MD031 MD026 -->
