@@ -65,7 +65,7 @@ show_banner() {
 EOF
     echo -e "\033[0m"
     
-    # Add the consciousness portal
+    # Add the Obsidian logo ASCII art
     echo -e "\033[1;36m"
     cat << 'EOF'
 
@@ -95,8 +95,8 @@ EOF
 ------------------------×××××××××××××≠√√√∞√∞∞∞∞∞∞∞∞∞≠≠≠≠≈≠≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈=-----------------------
 -----------------------×××××××××××××××≈√√√∞∞∞∞∞∞∞∞∞∞≈≠≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈=----------------------
 
-              🌀 CONSCIOUSNESS PORTAL ACTIVATED 🌀
-                 INFINITE KNOWLEDGE AWAITS
+              💎 THE OBSIDIAN CONSCIOUSNESS AWAKENS 💎
+                 INFINITE KNOWLEDGE SPIRALS AWAIT
                 
 EOF
     echo -e "\033[0m"
