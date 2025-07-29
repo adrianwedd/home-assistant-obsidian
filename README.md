@@ -17,7 +17,7 @@
 
 Transform your smart home into an **intelligent knowledge ecosystem**. This isn't just another add-on—it's a bridge between your home's data and your mind's potential. Experience the full power of Obsidian's knowledge management seamlessly integrated into your Home Assistant universe.
 
-**✨ *What makes this special?***  
+**✨ *What makes this special?***
 Purpose-built architecture that harmonizes perfectly with Home Assistant's security model, delivering enterprise-grade note-taking without compromise.
 
 ## 🎭 *The Story*
@@ -91,7 +91,7 @@ https://github.com/adrianwedd/home-assistant-obsidian
 
 Watch as the repository blooms into your add-on marketplace, bringing new possibilities to your smart home.
 
-### 🚀 **Act II: Installation**  
+### 🚀 **Act II: Installation**
 *Welcome Obsidian into your digital sanctuary*
 
 Find **Obsidian** among your available add-ons—it will be waiting for you with quiet confidence. Click **Install** and watch as our custom container architecture unfolds, creating a secure and elegant foundation for your knowledge management journey.

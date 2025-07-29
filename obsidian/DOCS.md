@@ -35,7 +35,7 @@ We've transcended the limitations of traditional container architectures to crea
 
 **What we built instead:**
 - ✨ **Custom Ubuntu 22.04 foundation** optimized for HA's environment
-- 🌐 **x11vnc + noVNC pipeline** delivering seamless browser integration  
+- 🌐 **x11vnc + noVNC pipeline** delivering seamless browser integration
 - 🔄 **NGINX reverse proxy** crafted specifically for Ingress harmony
 - 🧠 **Obsidian v1.8.10** with intelligent startup orchestration
 - 💎 **Multi-architecture support** (amd64, arm64, armv7) ensuring universal compatibility
@@ -64,7 +64,7 @@ Our architecture philosophy embraces **radical simplicity**. Most users will dis
 The UID/GID `911` isn't arbitrary—it's the **culmination of years of containerization wisdom** from the LinuxServer.io community. This identity creates perfect harmony between:
 
 - 🔒 **Container security boundaries**
-- 📁 **File system permissions** 
+- 📁 **File system permissions**
 - 🌊 **Home Assistant integration**
 - 🎭 **Cross-platform compatibility**
 
@@ -76,7 +76,7 @@ When you do need to personalize settings:
 
 1. **🧠 Contemplate** - Is this change truly necessary?
 2. **✏️ Edit** - Make your changes with intention
-3. **💾 Save** - Commit your configuration to reality  
+3. **💾 Save** - Commit your configuration to reality
 4. **🔄 Restart** - Allow the container to embrace its new form
 5. **🎉 Celebrate** - Your knowledge reactor is now uniquely yours
 

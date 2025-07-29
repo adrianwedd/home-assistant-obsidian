@@ -24,11 +24,11 @@ Every commit tells a story. Our commits should read like poetry—clear, intenti
 
 ### 🏗️ **Architecture & Foundation**
 - `🏗️ architect:` - Major structural changes, new systems
-- `🔧 engineer:` - Technical improvements, optimizations  
+- `🔧 engineer:` - Technical improvements, optimizations
 - `🎯 enhance:` - Feature enhancements, capability improvements
 - `✨ create:` - New features, components, or capabilities
 
-### 🐛 **Fixes & Maintenance** 
+### 🐛 **Fixes & Maintenance**
 - `🩹 heal:` - Bug fixes, issue resolutions
 - `🔒 secure:` - Security improvements, vulnerability fixes
 - `🧹 refine:` - Code cleanup, refactoring, polish
@@ -44,7 +44,7 @@ Every commit tells a story. Our commits should read like poetry—clear, intenti
 
 ### Primary Categories
 - 🏗️ `architect` - Building foundations
-- 🎯 `enhance` - Targeted improvements  
+- 🎯 `enhance` - Targeted improvements
 - ✨ `create` - Bringing something new into existence
 - 🩹 `heal` - Fixing and mending
 - 🔒 `secure` - Protection and safety
@@ -71,18 +71,18 @@ Every commit tells a story. Our commits should read like poetry—clear, intenti
 
 ### Body (72 chars per line)
 ```
-Transform the Obsidian container from a privileged, mount-conflict 
-prone system into an elegant, security-first architecture that 
+Transform the Obsidian container from a privileged, mount-conflict
+prone system into an elegant, security-first architecture that
 harmonizes perfectly with Home Assistant's design philosophy.
 
 Key improvements:
 • Ubuntu 22.04 foundation with purpose-built components
-• noVNC web interface eliminating Docker-in-Docker complexity  
+• noVNC web interface eliminating Docker-in-Docker complexity
 • NGINX reverse proxy optimized for HA Ingress integration
 • Comprehensive health monitoring and graceful service management
 
-This architectural evolution resolves persistent mount permission 
-conflicts while maintaining full Obsidian functionality and 
+This architectural evolution resolves persistent mount permission
+conflicts while maintaining full Obsidian functionality and
 enhancing overall system reliability.
 ```
 
@@ -102,12 +102,12 @@ ADDON-053: Add privileged mode and enhanced capabilities for mount operations
 ```
 🏗️ architect: design security-first container ecosystem
 
-Reimagine the Obsidian container architecture with elegance and 
-purpose, eliminating the need for privileged operations while 
+Reimagine the Obsidian container architecture with elegance and
+purpose, eliminating the need for privileged operations while
 creating a more reliable and maintainable foundation.
 
-This represents a philosophical shift from "making it work" to 
-"making it beautiful" - proving that security and functionality 
+This represents a philosophical shift from "making it work" to
+"making it beautiful" - proving that security and functionality
 can coexist in perfect harmony.
 
 ✨ Engineered for the future of Home Assistant integration
@@ -120,7 +120,7 @@ can coexist in perfect harmony.
 🚨 heal: resolve critical security vulnerability in container startup
 ```
 
-### Major Milestones  
+### Major Milestones
 ```
 🌟 architect: unveil next-generation Obsidian platform
 ```

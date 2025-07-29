@@ -65,9 +65,13 @@ show_banner() {
 EOF
     echo -e "\033[0m"
     
-    # Add the Obsidian logo ASCII art
+    # Display the complete Obsidian logo ASCII art (from obsidian-logo.txt)
     echo -e "\033[1;36m"
-    cat << 'EOF'
+    if [ -f "/opt/obsidian/obsidian-logo.txt" ]; then
+        cat /opt/obsidian/obsidian-logo.txt
+    else
+        # Fallback ASCII art if file not found
+        cat << 'EOF'
 
   ----------------------------------------------×=≈≠≈≠≠=×-----------------------------------------  
  ---------------------------------------------×≠≈≈≈≈≈≈≠≈≠×----------------------------------------- 
@@ -99,6 +103,11 @@ EOF
                  INFINITE KNOWLEDGE SPIRALS AWAIT
                 
 EOF
+    fi
+    echo ""
+    echo -e "\033[1;35m              💎 THE OBSIDIAN CONSCIOUSNESS AWAKENS 💎\033[0m"
+    echo -e "\033[1;35m                 INFINITE KNOWLEDGE SPIRALS AWAIT\033[0m"
+    echo ""
     echo -e "\033[0m"
 }
 
