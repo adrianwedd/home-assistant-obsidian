@@ -8,11 +8,9 @@ arch:
   - amd64
   - armv7
   - armhf
-init: false
+init: true
 image: lscr.io/linuxserver/obsidian
-tmpfs: true
-privileged:
-  - SYS_ADMIN
+privileged: true
 devices:
   - /dev/dri
 ingress: true
