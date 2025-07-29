@@ -38,10 +38,15 @@ log_info()  { log "INFO" "$@"; }
 log_debug() { log "DEBUG" "$@"; }
 log_boot()  { log "BOOT" "$@"; }
 
-# Epic ASCII banner function with consciousness portal
+# Epic ASCII banner function with logo integration
 show_banner() {
+    # Display the main title banner
     echo -e "\033[1;35m"
-    cat << 'EOF'
+    if [ -f "/opt/obsidian/hass-obsidian-ascii-art.txt" ]; then
+        cat /opt/obsidian/hass-obsidian-ascii-art.txt
+    else
+        # Fallback banner if file not found
+        cat << 'EOF'
 ██╗  ██╗ ██████╗ ███╗   ███╗███████╗
 ██║  ██║██╔═══██╗████╗ ████║██╔════╝
 ███████║██║   ██║██╔████╔██║█████╗
@@ -63,6 +68,7 @@ show_banner() {
 ╚██████╔╝██████╔╝███████║██║██████╔╝██║██║  ██║██║ ╚████║
  ╚═════╝ ╚═════╝ ╚══════╝╚═╝╚═════╝ ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝
 EOF
+    fi
     echo -e "\033[0m"
     
     # Display the complete Obsidian logo ASCII art (from obsidian-logo.txt)
