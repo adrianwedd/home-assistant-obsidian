@@ -32,7 +32,7 @@ OPENBOX_PID=$!
 
 # Start VNC server
 echo "🌐 Starting VNC server..."
-vncserver "$DISPLAY" -geometry "${XVFB_WHD%x*}" -depth 24 -localhost -nolisten tcp &
+x11vnc -display "$DISPLAY" -nopw -forever -shared -rfbport 5901 -geometry "${XVFB_WHD%x*}" &
 VNC_PID=$!
 
 # Start noVNC web interface

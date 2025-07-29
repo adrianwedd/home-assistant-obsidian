@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install -y \
     # Display server
     xvfb \
     # VNC server for web access
-    tigervnc-standalone-server \
+    x11vnc \
     # Window manager
     openbox \
     # Web server
@@ -78,10 +78,8 @@ RUN chmod +x /opt/obsidian/scripts/start.sh
 COPY health-check.sh /opt/obsidian/scripts/health-check.sh
 RUN chmod +x /opt/obsidian/scripts/health-check.sh
 
-# Set up VNC configuration
+# Set up VNC configuration  
 RUN mkdir -p /home/obsidian/.vnc
-COPY vnc-startup.sh /opt/obsidian/scripts/vnc-startup.sh
-RUN chmod +x /opt/obsidian/scripts/vnc-startup.sh
 
 # Configure Openbox window manager
 RUN mkdir -p /home/obsidian/.config/openbox
