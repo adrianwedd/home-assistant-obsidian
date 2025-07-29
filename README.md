@@ -1,75 +1,105 @@
-# 🧠 Obsidian for Home Assistant
-
-[![GitHub Release](https://img.shields.io/github/v/release/adrianwedd/home-assistant-obsidian?sort=semver&style=flat-square&logo=github)](https://github.com/adrianwedd/home-assistant-obsidian/releases)
-[![Home Assistant](https://img.shields.io/badge/Home%20Assistant-Compatible-blue?style=flat-square&logo=home-assistant)](https://www.home-assistant.io/)
-[![Docker](https://img.shields.io/badge/Docker-Multi--Arch-blue?style=flat-square&logo=docker)](https://hub.docker.com/r/linuxserver/obsidian)
-[![License](https://img.shields.io/github/license/adrianwedd/home-assistant-obsidian?style=flat-square)](https://github.com/adrianwedd/home-assistant-obsidian/blob/main/LICENSE)
-[![Maintenance](https://img.shields.io/maintenance/yes/2025?style=flat-square)](https://github.com/adrianwedd/home-assistant-obsidian)
-
-> **Transform your Home Assistant into a knowledge powerhouse.** Access the full Obsidian desktop experience directly from your Home Assistant sidebar—no separate installations, no complex setups, just pure note-taking excellence.
-
-**What is this?** A Community Add-on that wraps the battle-tested `lscr.io/linuxserver/obsidian` container, giving you instant access to Obsidian's powerful knowledge management tools through Home Assistant's Ingress system.
-
-**Why this matters:** Your smart home generates data. Your brain generates ideas. This add-on connects both in a private, local-first environment where your knowledge stays yours.
-
-## 🎯 Quick Demo
+# 🌟 Obsidian × Home Assistant
+*Where Knowledge Meets Intelligence*
 
 <div align="center">
-  <img src="https://github.com/adrianwedd/home-assistant-obsidian/raw/main/docs/screenshots/sidebar-integration.png" alt="Obsidian in Home Assistant sidebar" width="600"/>
-  <p><em>Obsidian running seamlessly inside Home Assistant via Ingress</em></p>
+
+[![🚀 Latest Release](https://img.shields.io/github/v/release/adrianwedd/home-assistant-obsidian?style=for-the-badge&logo=github&color=6366f1&labelColor=1e293b)](https://github.com/adrianwedd/home-assistant-obsidian/releases)
+[![🏠 Home Assistant](https://img.shields.io/badge/Home_Assistant-Compatible-03DAC6?style=for-the-badge&logo=home-assistant&logoColor=white)](https://www.home-assistant.io/)
+[![🐳 Multi-Arch](https://img.shields.io/badge/Docker-Multi--Arch-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://github.com/adrianwedd/home-assistant-obsidian/pkgs/container/obsidian-ha)
+[![📜 MIT License](https://img.shields.io/github/license/adrianwedd/home-assistant-obsidian?style=for-the-badge&color=10b981&labelColor=1e293b)](https://github.com/adrianwedd/home-assistant-obsidian/blob/main/LICENSE)
+[![✨ Maintained](https://img.shields.io/maintenance/yes/2025?style=for-the-badge&color=f59e0b&labelColor=1e293b)](https://github.com/adrianwedd/home-assistant-obsidian)
+
 </div>
 
 ---
 
-## ✨ Why Choose This Add-on?
+## 💫 *The Vision*
 
-### 🚀 **Zero-Friction Setup**
-- **One-click installation** from the Home Assistant Add-on Store
-- **No Docker knowledge required** – we handle the complexity
-- **Instant updates** via our automated CI/CD pipeline
-- **Multi-architecture support** (amd64, aarch64, armv7, armhf)
+Transform your smart home into an **intelligent knowledge ecosystem**. This isn't just another add-on—it's a bridge between your home's data and your mind's potential. Experience the full power of Obsidian's knowledge management seamlessly integrated into your Home Assistant universe.
 
-### 🔒 **Privacy-First Design**
-- **100% local** – your notes never leave your network
-- **No cloud dependencies** – works completely offline
-- **Automatic backups** included in Home Assistant snapshots
-- **Unprivileged containers** for enhanced security
+**✨ *What makes this special?***  
+Purpose-built architecture that harmonizes perfectly with Home Assistant's security model, delivering enterprise-grade note-taking without compromise.
 
-### 🎨 **Seamless Integration**
-- **Native sidebar access** – no separate tabs or bookmarks
-- **Single sign-on** through Home Assistant's authentication
-- **Responsive design** that works on desktop, tablet, and mobile
-- **Automatic health monitoring** with self-healing capabilities
+## 🎭 *The Story*
 
-### 🛠 **Enterprise-Grade Reliability**
-- **Battle-tested** LinuxServer.io base image
-- **Comprehensive monitoring** with automatic restarts
-- **Smart cache management** to keep backups lean
-- **Professional support** through GitHub Issues and Community forums
+Your smart home whispers secrets—sensor readings, automation triggers, device states. Your mind dreams solutions—project plans, device documentation, brilliant insights. This add-on creates the perfect harmony between these worlds.
+
+Built on a **custom, security-first container architecture**, we've reimagined how Obsidian integrates with Home Assistant. No more privileged containers, no mount conflicts, no compromises—just elegant functionality that feels like it was always meant to be.
+
+<div align="center">
+
+### 🎨 *Experience the Integration*
+
+<img src="https://github.com/adrianwedd/home-assistant-obsidian/raw/main/docs/screenshots/sidebar-integration.png" alt="Obsidian flourishing within Home Assistant" width="720" style="border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.12);"/>
+
+*Obsidian flowing seamlessly through Home Assistant's Ingress—knowledge at your fingertips*
+
+</div>
 
 ---
 
-## 🚀 Installation & Setup
+## 🌈 *The Experience*
 
-### Step 1: Add the Repository
+<div align="center">
 
-1. Navigate to **Settings** → **Add-ons** → **Add-on Store**
-2. Click the **⋮** menu (top right) → **Repositories**
-3. Add this URL:
-   ```text
-   https://github.com/adrianwedd/home-assistant-obsidian
-   ```
-4. Click **Add** and wait for the repository to load
+*"Technology should be invisible magic that amplifies human potential"*
 
-### Step 2: Install Obsidian
+</div>
 
-1. Find **Obsidian** in the add-on store
-2. Click **Install** (this takes 30-60 seconds depending on your system)
-3. Wait for the installation to complete
+### 🎯 **Effortless Elegance**
+- ✨ **One-touch installation** — From marketplace to mastery in under 60 seconds
+- 🧠 **Zero learning curve** — If you know Home Assistant, you already know this
+- 🔄 **Self-maintaining** — Updates flow seamlessly through our intelligent pipeline
+- 🌐 **Universal compatibility** — Runs beautifully on any architecture (AMD64, ARM64, ARMv7)
 
-### Step 3: Configure (Optional)
+### 🛡️ **Privacy by Design**
+- 🏠 **Sovereign knowledge** — Your thoughts remain exclusively yours, locally hosted
+- 🔒 **Zero telemetry** — No data escapes your network boundary
+- 💾 **Seamless preservation** — Automatically protected by Home Assistant's backup ecosystem
+- 🎭 **Security theater rejected** — Purpose-built container architecture eliminates privilege escalation
 
-Most users can skip this step—the defaults work perfectly for standard setups.
+### 🎨 **Harmonious Integration**
+- 🌟 **Native sidebar presence** — Feels like it was always part of Home Assistant
+- 🚪 **Unified authentication** — Single sign-on through your existing HA session
+- 📱 **Adaptive interface** — Graceful across desktop, tablet, and mobile experiences
+- 🔍 **Intelligent monitoring** — Self-healing with elegant degradation patterns
+
+### 💎 **Architectural Excellence**
+- 🏗️ **Custom-crafted foundation** — Purpose-built container optimized for Home Assistant
+- 🎪 **Zero-compromise security** — No privileged operations, no mount conflicts
+- 🧹 **Intelligent resource management** — Optimized memory and storage footprint
+- 🌍 **Community-driven evolution** — Responsive to real-world usage and feedback
+
+---
+
+## 🌟 *The Journey Begins*
+
+<div align="center">
+
+*From curiosity to creation in three elegant steps*
+
+</div>
+
+### 🎭 **Act I: Discovery**
+*Connect to the knowledge ecosystem*
+
+Navigate to your Home Assistant's **Settings** → **Add-ons** → **Add-on Store**, then click the **⋮** menu and select **Repositories**. Add this gateway:
+
+```
+https://github.com/adrianwedd/home-assistant-obsidian
+```
+
+Watch as the repository blooms into your add-on marketplace, bringing new possibilities to your smart home.
+
+### 🚀 **Act II: Installation**  
+*Welcome Obsidian into your digital sanctuary*
+
+Find **Obsidian** among your available add-ons—it will be waiting for you with quiet confidence. Click **Install** and watch as our custom container architecture unfolds, creating a secure and elegant foundation for your knowledge management journey.
+
+*The installation orchestrates multiple services: Ubuntu foundation, virtual display, web interface, and the Obsidian application itself—all harmonizing in under 60 seconds.*
+
+### ⚙️ **Act III: Personalization** *(Optional Symphony)*
+*Most minds will find perfection in our thoughtful defaults*
 
 <details>
 <summary>🔧 <strong>Advanced Configuration Options</strong></summary>
