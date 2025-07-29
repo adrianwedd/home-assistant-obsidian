@@ -144,6 +144,25 @@ You're now running a full Obsidian desktop environment! Create notes, build know
 </details>
 
 <details>
+<summary>⚠️ <strong>Mount permission warnings (NON-CRITICAL)</strong></summary>
+
+**Symptoms:** Log shows repeated mount errors for `/sys/kernel/security` and `/tmp`
+
+**Status:** **These are cosmetic warnings and do NOT affect functionality**
+
+**Background:** The LinuxServer.io container expects full system privileges that conflict with Home Assistant's security model. Despite these warnings, Obsidian operates normally.
+
+**What we've tried:**
+- ✅ Added graphics environment variables (LIBGL_ALWAYS_SOFTWARE, DISPLAY, XVFB_WHD)
+- ✅ Enabled privileged mode and enhanced capabilities (SYS_ADMIN, SYS_CHROOT, MKNOD)
+- ✅ Implemented tmpfs mounts for system directories
+- ✅ Standardized to LinuxServer.io UID/GID 911
+
+**Current status:** Container functions correctly despite mount warnings. See `MOUNT_TROUBLESHOOTING.md` for detailed analysis.
+
+</details>
+
+<details>
 <summary>📁 <strong>Vault not saving or disappearing</strong></summary>
 
 **Symptoms:** Notes vanish after restart or changes aren't saved
